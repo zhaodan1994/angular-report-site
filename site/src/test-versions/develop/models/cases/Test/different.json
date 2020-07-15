@@ -1,0 +1,244 @@
+{
+    "plots": [
+        {
+            "name": "p1",
+            "type": "Text",
+            "encodings": {
+                "values": [
+                    {
+                        "field": "Sales:N0"
+                    }
+                ],
+                "category": {
+                    "field": "Country"
+                }
+            }
+        }
+    ],
+    "config": {
+        "plotAreas": [
+            {
+                "axes": [
+                    {
+                        "plots": [
+                            "p1"
+                        ],
+                        "type": "X",
+                        "title": "Text Title",
+                        "labelAngle": 90,
+                        "labelStyle": {
+                            "color": "red",
+                            "fontFamily": "Times New Roman",
+                            "fontSize": 10,
+                            "fontStyle": "Italic",
+                            "fontWeight": "Bold",
+                            "TextDecoration": "Underline",
+                            "padding": "30"
+                        },
+                        "titleStyle": {
+                            "color": "blue"
+                        },
+                        "reversed": true,
+                        "position": "Far"
+                    },
+                    {
+                        "plots": [
+                            "p1"
+                        ],
+                        "type": "Y"
+                    }
+                ]
+            }
+        ]
+    },
+    "data": {
+        "name": "sample",
+        "values": [
+            {
+                "Country": "USA",
+                "Company": "IBM",
+                "Date": "2017-01-01T11:23:15.000Z",
+                "Downloads": 834,
+                "Sales": 3545.71,
+                "Expenses": 2645.38,
+                "NewCustomer": true,
+                "Salesman": "John",
+                "Detail": null,
+                "Number": 1
+            },
+            {
+                "Country": "USA",
+                "Company": "MS",
+                "Date": "2017-01-02T12:20:15.000Z",
+                "Downloads": 3834,
+                "Sales": 6545.71,
+                "Expenses": 645.38,
+                "NewCustomer": false,
+                "Salesman": "Glod",
+                "Detail": null,
+                "Number": 1
+            },
+            {
+                "Country": "USA",
+                "Company": "MAC",
+                "Date": "2017-01-03T11:23:45.000Z",
+                "Downloads": 2834,
+                "Sales": 9545.11,
+                "Expenses": 443.31,
+                "NewCustomer": true,
+                "Salesman": "Glod",
+                "Detail": null,
+                "Number": 2
+            },
+            {
+                "Country": "USA",
+                "Company": "FAO",
+                "Date": "2017-01-04T12:22:15.000Z",
+                "Downloads": 904,
+                "Sales": 6545.71,
+                "Expenses": 3908.38,
+                "NewCustomer": false,
+                "Salesman": null,
+                "Detail": null,
+                "Number": 2
+            },
+            {
+                "Country": "CHINA",
+                "Company": "UNESCO",
+                "Date": "2017-01-05T11:23:15.000Z",
+                "Downloads": 8340,
+                "Sales": 2545.71,
+                "Expenses": 1145.38,
+                "NewCustomer": true,
+                "Salesman": "John",
+                "Detail": null,
+                "Number": 2
+            },
+            {
+                "Country": "CHINA",
+                "Company": "UNCF",
+                "Date": "2017-01-06T12:20:15.000Z",
+                "Downloads": 383,
+                "Sales": 7745.71,
+                "Expenses": 1645.38,
+                "NewCustomer": false,
+                "Salesman": "Glod",
+                "Detail": null,
+                "Number": 3
+            },
+            {
+                "Country": "CHINA",
+                "Company": "UNIDO",
+                "Date": "2017-01-07T11:23:45.000Z",
+                "Downloads": 283,
+                "Sales": 7645.11,
+                "Expenses": 443.31,
+                "NewCustomer": true,
+                "Salesman": "Glod",
+                "Detail": null,
+                "Number": 3
+            },
+            {
+                "Country": "CHINA",
+                "Company": "UNDP",
+                "Date": "2017-01-08T12:22:15.000Z",
+                "Downloads": 9040,
+                "Sales": 4545.72,
+                "Expenses": 3908.38,
+                "NewCustomer": false,
+                "Salesman": null,
+                "Detail": null,
+                "Number": 3
+            },
+            {
+                "Country": "Italy",
+                "Company": "WHO",
+                "Date": "2017-01-09T11:23:15.000Z",
+                "Downloads": 3834,
+                "Sales": 7545.71,
+                "Expenses": 645.38,
+                "NewCustomer": true,
+                "Salesman": "John",
+                "Detail": null,
+                "Number": 4
+            },
+            {
+                "Country": "Italy",
+                "Company": "WTO",
+                "Date": "2017-01-10T12:20:15.000Z",
+                "Downloads": 13834,
+                "Sales": 2345.71,
+                "Expenses": 6452.38,
+                "NewCustomer": false,
+                "Salesman": "Glod",
+                "Detail": null
+            },
+            {
+                "Country": "Italy",
+                "Company": "WPC",
+                "Date": "2017-01-11T11:23:45.000Z",
+                "Downloads": 6544,
+                "Sales": 4545.11,
+                "Expenses": 4243.31,
+                "NewCustomer": true,
+                "Salesman": "Glod",
+                "Detail": null
+            },
+            {
+                "Country": "Italy",
+                "Company": "IMF",
+                "Date": "2017-01-12T12:22:15.000Z",
+                "Downloads": 1904,
+                "Sales": 11545.71,
+                "Expenses": 308.38,
+                "NewCustomer": false,
+                "Salesman": null,
+                "Detail": null
+            },
+            {
+                "Country": "New Zealand",
+                "Company": "IOC",
+                "Date": "2017-01-13T11:23:15.000Z",
+                "Downloads": 8234,
+                "Sales": 3987.71,
+                "Expenses": 1125.38,
+                "NewCustomer": true,
+                "Salesman": "John",
+                "Detail": null
+            },
+            {
+                "Country": "India",
+                "Company": "UPU",
+                "Date": "2017-01-14T12:20:15.000Z",
+                "Downloads": 3570,
+                "Sales": 2235.71,
+                "Expenses": 3645.38,
+                "NewCustomer": false,
+                "Salesman": "Glod",
+                "Detail": null
+            },
+            {
+                "Country": "Germany",
+                "Company": "IFC",
+                "Date": "2017-01-15T11:23:45.000Z",
+                "Downloads": 8834,
+                "Sales": 3545.11,
+                "Expenses": 2443.31,
+                "NewCustomer": true,
+                "Salesman": "Glod",
+                "Detail": null
+            },
+            {
+                "Country": "Japan",
+                "Company": "ICAO",
+                "Date": "2017-01-16T12:22:15.000Z",
+                "Downloads": 9040,
+                "Sales": 3545.71,
+                "Expenses": 1938.38,
+                "NewCustomer": false,
+                "Salesman": null,
+                "Detail": null
+            }
+        ]
+    }
+}

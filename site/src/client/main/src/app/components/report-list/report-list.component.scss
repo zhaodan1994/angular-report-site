@@ -1,0 +1,25 @@
+.clearButton {
+    right: 0px;
+    position: absolute;
+    margin-top: 5px;
+    cursor:pointer;
+    z-index: 10000;
+}
+
+table {
+    width: 100%;
+  }
+
+div .result {
+    display: inline-block;
+ 
+    width: 60px;
+    img.icon-img {
+        width: 14px;
+        height: 14px;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+

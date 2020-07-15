@@ -1,0 +1,131 @@
+.mdl-layout__content {
+    display: block !important;
+    .tsd-typography {
+        display: block !important;
+        box-shadow: 0 0 0px;
+        margin: 20px 0;
+        padding: 20px;
+        background-color: #fff;
+        line-height: 1.333em;
+    }
+}
+
+.tsd-page-title {
+    padding: 70px 0 20px 0;
+    margin: 0 0 40px 0;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+.tsd-breadcrumb {
+    margin: 0;
+    padding: 0;
+    color: #808080;
+}
+.tsd-page-title h1 {
+    margin: 0;
+}
+.documentation h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+    line-height: initial;
+}
+.tsd-breadcrumb li {
+    display: inline;
+}
+.tsd-breadcrumb a {
+    color: #808080;
+    text-decoration: none;
+}
+.tsd-breadcrumb li:after {
+    content: " / ";
+}
+.container-main {
+    padding-bottom: 200px;
+}
+.row {
+    position: relative;
+    margin: 0 -10px;
+}
+.col-8 {
+    width: 66.66667%;
+}
+.col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11 {
+    box-sizing: border-box;
+    float: left;
+    padding: 0 10px;
+}
+
+@media (min-width: 901px) { .documentation .menu-sticky-wrap { position: static; } }
+.col-4 {
+    width: 33.33333%;
+}
+.row:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+}
+.documentation .tsd-navigation.primary {
+    padding-bottom: 40px;
+}
+.documentation .tsd-navigation {
+    padding: 0 0 0 40px;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+.documentation .tsd-navigation.primary > ul {
+    border-bottom: 1px solid #eee;
+}
+.documentation .tsd-navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.documentation .tsd-navigation.primary li {
+    border-top: 1px solid #eee;
+}
+.documentation .tsd-navigation li {
+    padding: 0;
+}
+.documentation .tsd-navigation.primary ul li a {
+    padding-left: 5px;
+}
+.documentation .tsd-navigation.primary a {
+    display: block;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.documentation .tsd-navigation a {
+    display: block;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-left: 2px solid transparent;
+    color: #222;
+    text-decoration: none;
+    transition: border-left-color 0.1s;
+}
+
+.documentation .tsd-navigation.primary li.globals + li > span, .documentation .tsd-navigation.primary li.globals + li > a {
+    padding-top: 20px;
+}
+.tsd-kind-external-module > .tsd-kind-icon:before {
+    background-position: 0px -102px;
+}
+
+.tsd-kind-icon:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 17px;
+    height: 17px;
+    margin: 0 3px 2px 0;
+    background-image: url(../../../../../../../node_modules/typedoc-default-themes/bin/default/assets/images/icons.png);
+}

@@ -1,0 +1,178 @@
+<section>
+    <div class='buttonToolBar' [ngStyle]="{'left': left}">
+      <mat-form-field>
+          <mat-select [(value)]="selectedDate">
+            <mat-option *ngFor="let date of comparedDateList" [value]="date">
+              {{date}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+      <button disabled *ngIf="playing" mat-icon-button (click)="pause()" >
+        <mat-icon class="mat-icon-rtl-mirror">pause</mat-icon>
+      </button>
+      <button  *ngIf="!playing" mat-icon-button (click)="play(true)">
+        <mat-icon class="mat-icon-rtl-mirror">play_arrow</mat-icon>
+      </button>
+      <button *ngIf="!playing" class = "refresh" mat-icon-button (click)="refresh(true)">
+        <mat-icon class="mat-icon-rtl-mirror">refresh</mat-icon>
+      </button>
+      <button disabled *ngIf="playing" class = "refresh" mat-icon-button >
+        <mat-icon class="mat-icon-rtl-mirror">refresh</mat-icon>
+      </button>
+      <button id = "menunButton" mat-button [matMenuTriggerFor]="button" >...</button>
+      <mat-menu #button="matMenu">
+          <button mat-menu-item [matMenuTriggerFor]="layout">Layout</button>
+          <button *ngIf="showMenu" mat-menu-item [matMenuTriggerFor]="excuteCase">Excute Strategy</button>
+          <button *ngIf="showMenu" mat-menu-item [matMenuTriggerFor]="render">RenderMethod</button>
+          <button *ngIf="!showMenu"  disabled mat-menu-item [matMenuTriggerFor]="excuteCase">Excute Strategy</button>
+          <button *ngIf="!showMenu" disabled mat-menu-item [matMenuTriggerFor]="render">RenderMethod</button>
+      </mat-menu>           
+      <mat-menu #layout="matMenu">
+          <button (click)= "setLayout('horizontal')" mat-menu-item >
+            <mat-icon>{{(layoutMenu === 'horizontal') ? 'star' : ''}}</mat-icon>
+            <span>Horizontal</span>        
+          </button>
+          <button (click)= "setLayout('vertical')" mat-menu-item>
+            <mat-icon>{{layoutMenu === 'vertical' ? 'star' : ''}}</mat-icon>
+            <span>Vertical</span>   
+          </button>
+          <button (click)= "setLayout('auto')" mat-menu-item>
+            <mat-icon >{{layoutMenu === 'auto' ? 'star' : ''}}</mat-icon>
+            <span>Auto</span>   
+          </button>
+      </mat-menu>          
+      <mat-menu #excuteCase="matMenu">
+          <button (click)= "setExcuteStrategy('continue')" mat-menu-item>
+            <mat-icon>{{excuteStrategy === 'continue' ? 'star' : ''}}</mat-icon>
+            <span>Continuous Execution</span>   
+          </button>
+          <button (click)= "setExcuteStrategy('stop')" mat-menu-item>
+            <mat-icon>{{excuteStrategy === 'stop' ? 'star' : ''}}</mat-icon>
+            <span>Stop Execution</span>   
+          </button>
+      </mat-menu>
+      <mat-menu #render="matMenu">
+        <button (click)= "setRender('SVG')" mat-menu-item>
+          <mat-icon>{{renderMethod === 'SVG' ? 'star' : ''}}</mat-icon>
+          <span>SVG</span>  
+        </button>
+        <button (click)= "setRender('Canvas')" mat-menu-item>
+          <mat-icon>{{renderMethod === 'Canvas' ? 'star' : ''}}</mat-icon>
+          <span>Canvas</span>  
+        </button>
+     </mat-menu>
+  
+  </div>
+    
+    <div class="content">
+      <div class="model pane">
+  
+        <mat-tab-group  (selectedTabChange)= "selectedTab($event.index)" [selectedIndex] = "currentTab">
+          <mat-tab label="MODEL"  >   
+            <ng-template matTabContent>
+              <app-code-editor *ngIf="showCodeEditor" #fullModelEditor (getValue)= "fullModelOption.value = $event" [options]="fullModelOption"></app-code-editor> 
+            </ng-template>                     
+          </mat-tab>
+          <mat-tab label="CODE">
+            <ng-template matTabContent>
+              <app-code-editor *ngIf="showCodeEditor" #codeModelEditor (getValue)= "scriptJs.pre = codeModelOption.value = $event" [options]="codeModelOption"></app-code-editor> 
+            </ng-template>
+          </mat-tab>
+          <mat-tab label="DIFFERENCE">
+            <ng-template matTabContent>
+              <app-diff-dom  *ngIf="renderMethod === 'SVG' && domString!== null" [domString] = "domString" ></app-diff-dom>  
+             <app-diff-canvas  *ngIf="renderMethod === 'Canvas' && domString!== null" [content] = "domString"></app-diff-canvas>
+            </ng-template>  
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+      <p *ngIf="useCase !== null" class="showCaseName">Current UseCase: {{useCase.keys.join('/')}}</p>
+      <div class="graph pane">
+        <div class = "horizontal" *ngIf="orientation  === 'horizontal'" >
+          <ng-container *ngTemplateOutlet="divPane"></ng-container>
+        </div>
+  
+        <div class = "vertical" *ngIf="orientation  === 'vertical'" >
+          <ng-container *ngTemplateOutlet="divPane"></ng-container>
+        </div>    
+  
+      </div>
+    </div>
+  </section>
+
+  <ng-template #divPane>
+    <div class="first plot pane">
+      <div class= "plotHeader">
+        <span>Version: </span>
+        <mat-form-field>
+          <mat-select [(value)]="firstVersion" [disabled] = "!showMenu">
+              <mat-option value="develop">develop</mat-option>
+              <mat-option value="ar">ar</mat-option>
+              <mat-option value="gces">gces</mat-option>
+              <mat-option value="sjs">sjs</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <span>Url: </span>
+        <mat-form-field>
+            <mat-select [(value)]="firstUrl" [disabled] = "!showMenu">
+                <mat-option value="local">Local Url</mat-option>
+                <mat-option value="http">Http Url</mat-option>
+                <mat-option value="expected">Expected Result</mat-option>
+            </mat-select>
+        </mat-form-field>
+      </div>
+      <div class = "plotArea">
+        <ng-template [ngIf] = "option!= null">
+          <ng-container *ngIf="firstVersion == currentVersion && firstUrl == 'local'; else firstPlotTemplate">
+            <app-plot-viewer  [model]="option.fullModel" [js]="scriptJs" [isEventView] = "false" 
+            (contentChanged)="onFirstContentChange($event)"></app-plot-viewer>
+          </ng-container>
+          <ng-template #firstPlotTemplate>
+            <app-plot-viewer-external *ngIf="showFirstIframe" [url]="setIframeUrl('first')" [js]= "scriptJs"   [model]="option.fullModel"
+            (contentChanged)="onFirstContentChange($event)"></app-plot-viewer-external>
+          </ng-template>
+        </ng-template>
+      </div>
+
+     
+    </div>
+    <div class="second plot pane">
+      <div class="plotHeader">
+        <span>Version: </span>
+        <mat-form-field>
+            <mat-select [(value)]="secondVersion" [disabled] = "!showMenu">
+                <mat-option value="develop">develop</mat-option>
+                <mat-option value="ar">ar</mat-option>
+                <mat-option value="gces">gces</mat-option>
+                <mat-option value="sjs">sjs</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <span>Url: </span>
+        <mat-form-field>
+            <mat-select [(value)]="secondUrl" [disabled] = "!showMenu">
+                <mat-option value="local">Local Url</mat-option>
+                <mat-option value="http">Http Url</mat-option>
+                <mat-option value="expected">Expected Result</mat-option>
+            </mat-select>
+        </mat-form-field>
+      </div>
+      <div class = "plotArea">
+        <ng-template [ngIf] = "option!= null">
+          <ng-container *ngIf="secondVersion == currentVersion && secondUrl == 'local'; else secondPlotTemplate">
+            <app-plot-viewer  [model]="option.fullModel" [js]="scriptJs" [isEventView] = "false" 
+            (contentChanged)="onSecondContentChange($event)"></app-plot-viewer>
+          </ng-container>
+          <ng-template #secondPlotTemplate>
+            <app-plot-viewer-external *ngIf="showSecondIframe" [url]="setIframeUrl('second')" [js]= "scriptJs"   [model]="option.fullModel"
+            (contentChanged)="onSecondContentChange($event)"></app-plot-viewer-external>
+          </ng-template>
+        </ng-template>
+      </div>
+     
+
+    </div>
+  </ng-template>
+
+
+
+  

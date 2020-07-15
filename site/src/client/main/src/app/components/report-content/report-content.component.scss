@@ -1,0 +1,105 @@
+section {
+    margin: 0px auto;
+    width: 99.9%;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  
+    .buttonToolBar {
+      position: absolute;
+      margin-top: 4px;
+      z-index: 999;
+
+      
+      .example-full-width {
+        width: 100%;
+      }
+      .refresh {
+        margin-right: -14px;
+      }
+    }
+    .mat-toolbar {
+      font-weight: normal;
+      height: 40px;
+  
+      .space {
+        flex: auto;
+      }
+    }
+  
+    .content {
+      display: flex;
+      flex-flow: column wrap;
+      .caseState {
+        margin: 0px;
+        background-color: #512da8;
+        color: white;
+        font-size: 16px;
+        padding: 5px;
+        margin-bottom: 3px;
+      }
+      .pane {
+        border: 1px solid #f4f4f4;
+        width: calc(100% - 4px);
+      }
+
+      .plot {
+        flex: 1;
+        display: block;
+        width: 100%;
+        .plotArea {
+          height: 450px;
+          width: 100%;
+        }
+      }  
+   
+      .graph {
+        background-color: white;  
+        span {
+          padding-right: 10px;
+        }
+        flex-flow: row wrap;
+        .app-plot-viewer-external {
+          flex: 1;
+          display: block;
+          width: 100%;
+          height: 450px;
+        }
+        .app-plot-viewer {
+          height: 450px;
+          width: 100%;
+        }
+        .horizontal {
+          div {
+            display: inline-block;
+            width: calc(50% - 4px);
+            .plotHeader {
+              width: 100%;
+            }
+            .plotArea {
+              width: 100%;
+            }
+          }
+    
+        }
+        .vertical {
+          .plotHeader {
+            width: 100%;
+          } 
+    
+        }
+  
+      }
+  
+  
+      .model {
+        display: inline-flex;
+        flex-flow: column;
+        flex: 1;
+        user-select: none;
+        position: relative;
+  
+        ::ng-deep.mat-tab-body-content {
+          height: 450px;
+        }
+      }
+    }
+  }
