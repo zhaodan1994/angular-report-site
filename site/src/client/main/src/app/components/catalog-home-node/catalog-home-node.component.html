@@ -1,8 +1,0 @@
-<a *ngIf="model && model.childCatalogs().length <= 0" routerLink="{{isEditPage ? ('../../' + model.keys[0] + '/edit/' + model.keys.slice(1).join('/')) : ( '../' + model.keys.join('/'))}}" routerLinkActive="active"> {{model.title}} </a>
-<span *ngIf="model && model.childCatalogs().length > 0"> {{model.title}} </span>
-<ul *ngIf="model && model.childCatalogs().length > 0">
-  <li *ngFor="let item of model.childCatalogs()">
-    <app-catalog-home-node  *ngIf=" page=='testing' || item.childUseCases().length" [model]="item"></app-catalog-home-node>
-  </li>
-</ul>
-

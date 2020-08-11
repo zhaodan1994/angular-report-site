@@ -1,8 +1,0 @@
-<section *ngIf="model != null">
-    <h4>{{model.title}}</h4>
-    <ul *ngIf="model.childCatalogs().length > 0">
-      <li *ngFor="let item of model.childCatalogs()">
-        <app-catalog-home-node [model]="item" [page] = "page"></app-catalog-home-node>
-      </li>
-    </ul>
-</section>
