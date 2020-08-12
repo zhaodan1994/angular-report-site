@@ -1,0 +1,5 @@
+<ul *ngIf="model != null">
+    <section *ngFor="let item of model.childUseCases()">
+      <app-use-case-snippet [model]="item" [isEditPage] = "isEditPage" *ngIf="model"></app-use-case-snippet>
+    </section>
+</ul>

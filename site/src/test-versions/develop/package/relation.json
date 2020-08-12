@@ -1,0 +1,14 @@
+[
+    {
+        "keys" :  ["cases", "bar", "line", "area_chart"],
+        "date" : "2020-06-01"
+    },
+    {
+        "keys" :  ["cases", "bar", "line", "bar_chart"],
+        "date" : "2020-06-02"
+    },
+    {
+        "keys" :  ["cases", "bar", "line", "line_chart"],
+        "date" : "2020-06-03"
+    }
+]

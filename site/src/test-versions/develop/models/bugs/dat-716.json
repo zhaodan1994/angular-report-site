@@ -1,0 +1,348 @@
+{
+    "plots": [
+        {
+            "name": "p0",
+            "type": "Bar",
+            "encodings": {
+                "values": [
+                    {
+                        "field": "Count of Record number",
+                        "aggregate": 0
+                    }
+                ],
+                "category": {
+                    "field": "Radio_Button_2"
+                },
+                "details": [
+                    {
+                        "group": 1,
+                        "field": "DB*Series",
+                        "sort": {
+                            "field": "DB*SeriesSort",
+                            "order": 0
+                        },
+                        "excludeNulls": true
+                    }
+                ],
+                "color": {
+                    "field": "DB*Series"
+                },
+                "tooltip": [
+                    {
+                        "field": "Count of Record number"
+                    },
+                    {
+                        "field": "Radio_Button_2"
+                    },
+                    {
+                        "field": "Drop_down"
+                    },
+                    {
+                        "field": "DB*ValueName"
+                    }
+                ],
+                "text": [
+                    {
+                        "field": "Count of Record number"
+                    },
+                    {
+                        "field": "Radio_Button_2"
+                    },
+                    {
+                        "field": "Drop_down"
+                    },
+                    {
+                        "field": "DB*ValueName"
+                    }
+                ]
+            },
+            "config": {
+                "clippingMode": 1,
+                "text": {
+                    "style": {
+                        "backgroundColor": "transparent",
+                        "stroke": "transparent",
+                        "strokeWidth": 1
+                    },
+                    "position": 3,
+                    "textStyle": {
+                        "color": "black",
+                        "fontSize": "12",
+                        "fontFamily": "HelveticaNeueW02-45Ligh,Arial,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif"
+                    },
+                    "overlappingLabels": 0,
+                    "template": "{valueField.value}"
+                },
+                "swapAxes": false,
+                "axisMode": 0,
+                "showNulls": 1,
+                "hoverStyle": {
+                    "opacity": 0.8
+                },
+                "loadAnimation": {
+                    "mode": 1,
+                    "duration": 1000,
+                    "easing": 0,
+                    "startDelay": 0,
+                    "staggering": false
+                }
+            }
+        }
+    ],
+    "data": {
+        "name": "App1",
+        "values": [
+            {
+                "Radio_Button_2": "Approve",
+                "Drop_down": "2 - High",
+                "Count of Record number": 16,
+                "DB*SeriesSort": 1,
+                "DB*Series": "2 - High",
+                "DB*Value": 16,
+                "DB*ValueName": "Count of Record number"
+            },
+            {
+                "Radio_Button_2": "Approve",
+                "Drop_down": "3 - Medium",
+                "Count of Record number": 40,
+                "DB*SeriesSort": 2,
+                "DB*Series": "3 - Medium",
+                "DB*Value": 40,
+                "DB*ValueName": "Count of Record number"
+            },
+            {
+                "Radio_Button_2": "Approve",
+                "Drop_down": "4 - Low",
+                "Count of Record number": 28,
+                "DB*SeriesSort": 3,
+                "DB*Series": "4 - Low",
+                "DB*Value": 28,
+                "DB*ValueName": "Count of Record number"
+            },
+            {
+                "Radio_Button_2": "Committed",
+                "Drop_down": "2 - High",
+                "Count of Record number": 3,
+                "DB*SeriesSort": 5,
+                "DB*Series": "2 - High",
+                "DB*Value": 3,
+                "DB*ValueName": "Count of Record number"
+            },
+            {
+                "Radio_Button_2": "Committed",
+                "Drop_down": "3 - Medium",
+                "Count of Record number": 6,
+                "DB*SeriesSort": 6,
+                "DB*Series": "3 - Medium",
+                "DB*Value": 6,
+                "DB*ValueName": "Count of Record number"
+            },
+            {
+                "Radio_Button_2": "Committed",
+                "Drop_down": "4 - Low",
+                "Count of Record number": 3,
+                "DB*SeriesSort": 7,
+                "DB*Series": "4 - Low",
+                "DB*Value": 3,
+                "DB*ValueName": "Count of Record number"
+            },
+            {
+                "Radio_Button_2": "Done",
+                "Drop_down": "1 - Critical",
+                "Count of Record number": 3,
+                "DB*SeriesSort": 8,
+                "DB*Series": "1 - Critical",
+                "DB*Value": 3,
+                "DB*ValueName": "Count of Record number"
+            },
+            {
+                "Radio_Button_2": "Done",
+                "Drop_down": "2 - High",
+                "Count of Record number": 55,
+                "DB*SeriesSort": 9,
+                "DB*Series": "2 - High",
+                "DB*Value": 55,
+                "DB*ValueName": "Count of Record number"
+            },
+            {
+                "Radio_Button_2": "Done",
+                "Drop_down": "3 - Medium",
+                "Count of Record number": 324,
+                "DB*SeriesSort": 10,
+                "DB*Series": "3 - Medium",
+                "DB*Value": 324,
+                "DB*ValueName": "Count of Record number"
+            },
+            {
+                "Radio_Button_2": "Done",
+                "Drop_down": "4 - Low",
+                "Count of Record number": 22,
+                "DB*SeriesSort": 11,
+                "DB*Series": "4 - Low",
+                "DB*Value": 22,
+                "DB*ValueName": "Count of Record number"
+            }
+        ],
+        "dateFormats": false
+    },
+    "config": {
+        "bar": {},
+        "style": {
+            "backgroundColor": "transparent"
+        },
+        "textStyle": {
+            "color": "black",
+            "fontSize": "12",
+            "fontFamily": "HelveticaNeueW02-45Ligh,Arial,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif"
+        },
+        "borderStyle": {
+            "stroke": "transparent"
+        },
+        "selectionMode": 0,
+        "selectedStyle": {
+            "adorners": true
+        },
+        "header": {
+            "title": "DAT-716",
+            "textStyle": {
+                "color": "black",
+                "fontSize": "14",
+                "fontFamily": "HelveticaNeueW02-45Ligh,Arial,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif",
+                "fontWeight": 1
+            },
+            "style": {
+                "backgroundColor": "transparent",
+                "stroke": "transparent",
+                "strokeWidth": 1
+            },
+            "hAlign": 1
+        },
+        "plotAreas": [
+            {
+                "axes": [
+                    {
+                        "plots": [
+                            "p0"
+                        ],
+                        "position": 1,
+                        "type": 0,
+                        "reversed": false,
+                        "format": "",
+                        "title": "Status",
+                        "titleStyle": {
+                            "color": "black",
+                            "fontSize": "13",
+                            "fontFamily": "HelveticaNeueW02-45Ligh,Arial,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif"
+                        },
+                        "lineStyle": {
+                            "stroke": "#D9D9D9"
+                        },
+                        "textStyle": {
+                            "color": "black",
+                            "fontSize": "12",
+                            "fontFamily": "HelveticaNeueW02-45Ligh,Arial,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif"
+                        },
+                        "majorGrid": false,
+                        "minorGrid": false,
+                        "majorTicks": 0,
+                        "minorTicks": 0,
+                        "majorTickSize": 5,
+                        "minorTickSize": 5,
+                        "majorTickStyle": {
+                            "stroke": "#D9D9D9"
+                        },
+                        "minorTickStyle": {
+                            "stroke": "#D9D9D9"
+                        },
+                        "labelAngle": [
+                            0
+                        ],
+                        "labelStyle": {
+                            "color": "black",
+                            "fontSize": "12",
+                            "fontFamily": "HelveticaNeueW02-45Ligh,Arial,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif",
+                            "padding": {}
+                        },
+                        "scale": {}
+                    },
+                    {
+                        "plots": [
+                            "p0"
+                        ],
+                        "position": 1,
+                        "type": 1,
+                        "reversed": false,
+                        "format": "",
+                        "title": "",
+                        "lineStyle": {
+                            "stroke": "#D9D9D9"
+                        },
+                        "textStyle": {
+                            "color": "black",
+                            "fontSize": "12",
+                            "fontFamily": "HelveticaNeueW02-45Ligh,Arial,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif"
+                        },
+                        "majorGrid": true,
+                        "majorGridStyle": {
+                            "stroke": "#D9D9D9",
+                            "strokeWidth": 1
+                        },
+                        "minorGrid": false,
+                        "majorTicks": 0,
+                        "minorTicks": 0,
+                        "majorTickSize": 5,
+                        "minorTickSize": 5,
+                        "majorTickStyle": {
+                            "stroke": "#D9D9D9"
+                        },
+                        "minorTickStyle": {
+                            "stroke": "#D9D9D9"
+                        },
+                        "labelAngle": [
+                            0
+                        ],
+                        "labelStyle": {
+                            "color": "black",
+                            "fontSize": "12",
+                            "fontFamily": "HelveticaNeueW02-45Ligh,Arial,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif",
+                            "padding": {}
+                        },
+                        "scale": {}
+                    }
+                ],
+                "legend": {
+                    "position": 2,
+                    "orientation": 1,
+                    "wrapping": false,
+                    "textStyle": {
+                        "color": "black",
+                        "fontSize": "12",
+                        "fontFamily": "HelveticaNeueW02-45Ligh,Arial,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif"
+                    }
+                },
+                "legends": [
+                    {
+                        "type": 1,
+                        "title": "",
+                        "style": {
+                            "iconColor": "#666"
+                        }
+                    },
+                    {
+                        "type": 0,
+                        "title": "Priority"
+                    }
+                ]
+            }
+        ],
+        "palette": [
+            "#5b9bd5",
+            "#ed7d31",
+            "#a5a5a5",
+            "#ffc000",
+            "#4472c4",
+            "#70ad47"
+        ]
+    },
+    "renderMethod": 1
+}

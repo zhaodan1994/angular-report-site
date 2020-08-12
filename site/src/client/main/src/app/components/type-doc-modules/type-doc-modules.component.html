@@ -1,0 +1,125 @@
+<main class="mdl-layout__content documentation">
+    <header>
+      <app-type-doc-search [documentObject] = "documentObject"></app-type-doc-search>
+      <div class="tsd-page-title">
+        <div class="container">
+          <ul class="tsd-breadcrumb">
+            <li>
+              <a routerLink="../../globals">Globals</a>
+            </li>
+            <li *ngFor="let item of pageArray">
+              <a [routerLink]="setNavigateRouter(item)">{{item.substring(item.lastIndexOf('.')+1)}}</a>
+            </li>
+          </ul>
+          <h1 *ngIf="moduleObject">{{moduleObject.kindString}} {{moduleObject.name}}</h1>
+        </div>
+      </div>
+    </header>
+    <div class="container container-main">
+      <div class="row">
+        <div class="col-8 col-content">
+          <section class="tsd-panel-group tsd-index-group">
+            <h2>Index</h2>
+            <section class="tsd-panel tsd-index-panel">
+              <div class="tsd-index-content">
+                <section *ngFor="let group of groups | keyvalue : returnZero" class="tsd-index-section ">
+                  <h3>{{group.key}}</h3>
+                  <ul class="tsd-index-list">
+                    <li *ngFor="let module of group.value" class="tsd-parent-kind-module" [ngClass]="setNgClass(module)">
+                      <a *ngIf="module.kind !== 4194304 && (module.routerName)" [routerLink]="[getComponent(group.key),module.routerName]" class="tsd-kind-icon">{{module.name}}</a>
+                      <a *ngIf="module.kind !== 4194304 && (!module.routerName)"  class="tsd-kind-icon">{{module.name}}</a>
+                      <a *ngIf="module.kind === 4194304" (click)="jumpTypeAlias(module)" class="tsd-kind-icon">{{module.name}}</a>
+                    </li>
+                  </ul>
+                </section>
+              </div>
+            </section>
+          </section>
+          <section *ngIf="groups['Type aliases']" class="tsd-panel-group tsd-member-group ">
+            <h2>Type aliases</h2>
+            <section *ngFor="let alias of groups['Type aliases']" class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+              <a name="{{alias.name}}" id="{{alias.name}}" class="tsd-anchor"></a>
+              <h3>{{alias.name}}</h3>
+              <div class="tsd-signature tsd-kind-icon">{{alias.name}}<span class="tsd-signature-symbol">: </span>
+                <app-type-doc-types [id]="alias.id" [documentObject]="documentObject" [param]="alias.type"></app-type-doc-types>
+              </div>
+              <aside class="tsd-sources">
+              </aside>
+              <div *ngIf="alias.type.declaration &&  alias.type.declaration.signatures" class="tsd-type-declaration">
+                <h4>Type declaration</h4>
+                <ul class="tsd-parameters">
+                  <li class="tsd-parameter-siganture">
+                    <ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+                      <li  *ngFor="let item of alias.type.declaration.signatures" class="tsd-signature tsd-kind-icon">
+                        <ng-template ngFor let-param [ngForOf]="item.parameters" let-i="index">
+                          <span *ngIf="i === 0" class="tsd-signature-symbol">(</span>{{param.name}}<span class="tsd-signature-symbol">: </span>
+                          <app-type-doc-types [id]="alias.id" [documentObject]="documentObject" [param]="param.type"></app-type-doc-types>
+                          <span class="tsd-signature-symbol">{{(i === item.parameters.length-1) ? ')' : ', '}}</span>
+                        </ng-template>
+                        <ng-template [ngIf]="item.type">
+                          <span class="tsd-signature-symbol">: </span>
+                          <app-type-doc-types [id]="alias.id" [documentObject]="documentObject" [param]="item.type"></app-type-doc-types>
+                        </ng-template>
+                      </li>
+                    </ul>
+                    <ul class="tsd-descriptions">
+                      <li  *ngFor="let item of alias.type.declaration.signatures" class="tsd-description">
+                        <h4 class="tsd-parameters-title">Parameters</h4>
+                        <ul class="tsd-parameters" *ngFor="let param of item.parameters">
+                          <li>
+                            <h5>{{param.name}}:
+                              <app-type-doc-types [id]="alias.id" [documentObject]="documentObject" [param]="param.type"></app-type-doc-types>
+                            </h5>
+                          </li>
+                        </ul>
+                        <h4 class="tsd-returns-title">Returns
+                          <app-type-doc-types [id]="alias.id" [documentObject]="documentObject" [param]="item.type"></app-type-doc-types>
+                        </h4>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div *ngIf="alias.comment" class="tsd-comment tsd-typography">
+                <div class="lead">
+                  <p *ngIf="alias.comment.shortText">{{alias.comment.shortText}}</p>
+                </div>
+                <p *ngIf="alias.comment.text">{{alias.comment.text}}</p>
+              </div>
+            </section>
+          </section>
+        </div>
+        <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+          <nav class="tsd-navigation primary">
+            <ul>
+              <ng-container *ngIf="pageArray.length === 1; else elseTemplate">
+                <li class="globals">
+                  <a routerLink="../../globals"><em>Globals</em></a>
+                </li>
+                <li *ngFor="let obj of documentJson" class="tsd-kind-external-module">
+                  <a [routerLink]="['../../modules',obj.name]" class="tsd-kind-icon">
+                    {{obj.name}}
+                  </a>
+                </li>
+              </ng-container>
+              <ng-template #elseTemplate>
+                <li class="globals">
+                  <a routerLink="../../globals"><em>Globals</em></a>
+                </li>
+              </ng-template>
+            </ul>
+          </nav>
+          <nav *ngIf="moduleObject"  class="tsd-navigation secondary menu-sticky">
+            <ul class="before-current">
+              <li *ngFor="let module of moduleObject.children" [ngClass]="setNgClass(module)">
+                <a *ngIf="module.kind !== 4194304 && module.routerName" [routerLink]="[getComponent(module.kindString),module.routerName]" class="tsd-kind-icon">{{module.name}}</a>
+                <a *ngIf="module.kind !== 4194304 && !(module.routerName)" class="tsd-kind-icon">{{module.name}}</a>
+                <a *ngIf="module.kind === 4194304" (click)="jumpTypeAlias(module)" class="tsd-kind-icon">{{module.name}}</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+  </main>

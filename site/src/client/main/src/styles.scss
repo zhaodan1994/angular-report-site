@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", "Helvetica Neue", "sans-serif";
+}
+
+:focus {
+    outline: transparent;
+  }
+  
+.mat-drawer-container {
+    height: 100%;
+    background-color: white;
+  
+    .mat-drawer {
+      width: 240px;
+      border-right: 1px solid #e0e0e0;
+    }
+}
+
+a {
+  font-weight: 500;
+}
+
+a,
+a:link,
+a:visited,
+a:active,
+a:hover {
+  color: rgb(0, 0, 238);
+}
+
+pre .enum {
+  border: 1px solid gray;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: Roboto, Helvetica,Arial,sans-serif;
+  padding: 0 16px;
+  letter-spacing: 0;
+  text-transform: none;
+
+}
+.mat-checkbox-inner-container {
+  display: none !important;
+}

@@ -1,0 +1,6 @@
+<div class="snippetDiv" #snippetNode>
+    <ng-template #selectContainer></ng-template>
+    <div *ngFor="let snippet of snippetJson; let i=index">
+        <pre id="snippet" class="prettyprint">{{snippet}}</pre>
+    </div>
+</div>

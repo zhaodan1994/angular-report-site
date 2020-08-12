@@ -1,0 +1,7 @@
+<mat-form-field id="selectView">
+    <mat-select #matSelect [(value)]="selected" disableRipple (selectionChange)="setSelectElement(matSelect.value)">
+      <ng-template ngFor let-option [ngForOf]="enumType" let-i="index">
+        <mat-option value={{option}}>{{option}}</mat-option>
+      </ng-template>
+    </mat-select>
+</mat-form-field>

@@ -1,0 +1,435 @@
+<main class="mdl-layout__content documentation">
+    <header>
+      <app-type-doc-search [documentObject] = "documentObject"></app-type-doc-search>
+      <div class="tsd-page-title">
+        <div class="container">
+          <ul class="tsd-breadcrumb">
+            <li>
+              <a routerLink="../../globals">Globals</a>
+            </li>
+            <li *ngFor="let item of pageArray">
+              <a [routerLink]="setNavigateRouter(item)">{{item.substring(item.lastIndexOf('.')+1)}}</a>
+            </li>
+          </ul>
+          <h1 *ngIf="classObject">{{classObject.kindString}} {{classObject.name}}{{setTypeParam()}}</h1>
+        </div>
+      </div>
+    </header>
+    <div *ngIf="classObject" class="container container-main">
+      <div class="row">
+        <div class="col-8 col-content">
+          <section class="tsd-panel tsd-comment">
+            <app-type-doc-comment *ngIf="classObject.comment" [comment] = "classObject.comment" [obj] = "documentObject" [array] = "documentArray"> </app-type-doc-comment>
+          </section>
+          <section *ngIf="classObject.typeParameter && classObject.typeParameter.length>0" class="tsd-panel tsd-type-parameters">
+            <h3>Type parameters</h3>
+            <ul class="tsd-type-parameters">
+              <li *ngFor="let type of classObject.typeParameter">
+                <h4>{{type.name}}</h4>
+              </li>
+            </ul>
+          </section>
+          <section class="tsd-panel tsd-hierarchy">
+            <h3>Hierarchy</h3>
+            <ul class="tsd-hierarchy" *ngIf="classObject.extendedTypes">
+              <li>
+                <ng-template ngFor let-item [ngForOf]="classObject.extendedTypes" let-i="index">
+                  <span *ngIf="i!==0" class="tsd-signature-symbol"> , </span>
+                  <app-type-doc-types [documentObject]="documentObject" [param]="item"></app-type-doc-types>
+                </ng-template>
+                <ul class="tsd-hierarchy">
+                  <li>
+                    <span class="target">{{classObject.name}}</span>
+                    <ul class="tsd-hierarchy">
+                      <ng-template ngFor let-item [ngForOf]="classObject.extendedBy">
+                        <li *ngIf="item.type!=='union' || item.type.types">
+                          <app-type-doc-types [documentObject]="documentObject" [param]="item"></app-type-doc-types>
+                        </li>
+                      </ng-template>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="tsd-hierarchy" *ngIf="!classObject.extendedTypes">
+              <li>
+                <span class="target">{{classObject.name}}</span>
+                <ul class="tsd-hierarchy">
+                  <ng-template ngFor let-item [ngForOf]="classObject.extendedBy">
+                    <li *ngIf="item.type!=='union' || item.type.types">
+                      <app-type-doc-types [documentObject]="documentObject" [param]="item"></app-type-doc-types>
+                    </li>
+                  </ng-template>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section *ngIf="classObject.implementedTypes && classObject.implementedTypes.length>0" class="tsd-panel">
+            <h3>Implements</h3>
+            <ul class="tsd-hierarchy">
+              <li *ngFor="let item of classObject.implementedTypes">
+                <app-type-doc-types [documentObject]="documentObject" [param]="item"></app-type-doc-types>
+                <ng-template [ngIf]="item.typeArguments">
+                  <ng-template ngFor let-param [ngForOf]="item.typeArguments" let-i="index">
+                    <span class="tsd-signature-symbol">{{i === 0 ? '&lt;' : ' , '}}</span>
+                    <app-type-doc-types [documentObject]="documentObject" [param]="param"></app-type-doc-types>
+                    <span *ngIf="i === item.typeArguments.length-1" class="tsd-signature-symbol">&gt;</span>
+                  </ng-template>
+                </ng-template>
+              </li>
+            </ul>
+          </section>
+          <section *ngIf="classObject.implementedBy && classObject.implementedBy.length>0" class="tsd-panel">
+            <h3>Implemented by</h3>
+            <ul class="tsd-hierarchy">
+              <li *ngFor="let item of classObject.implementedBy">
+                <app-type-doc-types [documentObject]="documentObject" [param]="item"></app-type-doc-types>
+              </li>
+            </ul>
+          </section>
+          <section class="tsd-panel-group tsd-index-group">
+            <h2>Index</h2>
+            <section class="tsd-panel tsd-index-panel">
+              <div class="tsd-index-content">
+                <section *ngFor="let group of groups | keyvalue : returnZero" class="tsd-index-section">
+                  <h3>{{group.key}}</h3>
+                  <ul class="tsd-index-list">
+                    <li *ngFor="let module of group.value" [ngClass]="setNgClass(module)">
+                      <a (click)="jumpClassElement(module)" class="tsd-kind-icon">{{module.name}}</a>
+                    </li>
+                  </ul>
+                </section>
+              </div>
+            </section>
+          </section>
+          <section *ngFor="let group of groups | keyvalue : returnZero" class="tsd-panel-group tsd-member-group ">
+            <h2>{{group.key}}</h2>
+            <ng-template [ngIf]="group.key === 'Properties'">
+              <ng-template ngFor let-property [ngForOf]="group.value" let-i="index">
+                <section class="tsd-panel tsd-member " [ngClass]="setNgClass(property)">
+                  <a name="{{property.name}}" id="{{property.name}}" class="tsd-anchor"></a>
+                  <h3>
+                    <span *ngIf="property.flags.isProtected" class="tsd-flag ts-flagProtected">Protected</span>
+                    <span *ngIf="property.flags.isStatic" class="tsd-flag ts-flagStatic">Static</span>
+                    <span *ngIf="property.flags.isPrivate" class="tsd-flag ts-flagPrivate">Private</span>
+                    {{property.name}}</h3>
+                  <div class="tsd-signature tsd-kind-icon">{{property.name}}<span class="tsd-signature-symbol">: </span>
+                    <app-type-doc-types [id]="classObject.id" [documentObject]="documentObject" [param]="property.type"></app-type-doc-types>
+                    <span *ngIf="property.defaultValue" class="tsd-signature-symbol"> =&nbsp;{{property.defaultValue}}</span>
+                  </div>
+                  <aside class="tsd-sources">
+                    <p *ngIf="property.inheritedFrom">Inherited from
+                      <ng-template [ngIf]="property.inheritedFrom.id">
+                        <ng-template ngFor let-name [ngForOf]="property.inheritedFrom.name.split('.')" let-i="index">
+                          <ng-template [ngIf]="i!==0">.</ng-template><a [routerLink]="jumpOtherPage(i,property.inheritedFrom,property.inheritedFrom.id )">{{name}}</a>
+                        </ng-template>
+                      </ng-template>
+                      <ng-template [ngIf]="!property.inheritedFrom.id">{{property.inheritedFrom.name}}</ng-template>
+                
+                    </p>
+                    <p *ngIf="property.overwrites">Overrides
+                      <ng-template [ngIf]="property.overwrites.id">
+                        <ng-template ngFor let-name [ngForOf]="property.overwrites.name.split('.')" let-j="index">
+                          <ng-template [ngIf]="j!==0">.</ng-template><a [routerLink]="jumpOtherPage(j,property.overwrites,property.overwrites.id )">{{name}}</a>
+                        </ng-template>
+                      </ng-template>
+                      <ng-template [ngIf]="!property.overwrites.id">{{property.overwrites.name}}</ng-template>
+                    
+                      
+                    </p>
+                  </aside>
+                  <app-type-doc-comment *ngIf="property.comment" [obj]="documentObject" [array] = "documentArray" [comment]="property.comment"></app-type-doc-comment>
+                  <div *ngIf="property.type.declaration && property.type.declaration.indexSignature"  class="tsd-type-declaration">
+                    <h4>Type declaration</h4>
+                    <ul class="tsd-parameters">
+                      <li  class="tsd-parameter-index-signature">   
+                        <h5>
+                          <span class="tsd-signature-symbol">[</span>
+                          <ng-template ngFor let-item [ngForOf]="property.type.declaration.indexSignature.parameters" let-i="index" >
+                            <span  *ngIf="i!==0" class="tsd-signature-symbol">, </span>{{item.name}}:
+                            <app-type-doc-types [documentObject]="documentObject" [param]="item.type"></app-type-doc-types>
+                          </ng-template>
+                          <span class="tsd-signature-symbol">]</span>
+                          <ng-template [ngIf]="property.type.declaration.indexSignature.type">
+                            <span class="tsd-signature-symbol">: </span>
+                            <app-type-doc-types  [documentObject]="documentObject" [param]="property.type.declaration.indexSignature.type"></app-type-doc-types>
+                          </ng-template>
+                        </h5>                   
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </ng-template>
+  
+            </ng-template>
+            <ng-template [ngIf]="group.key !== 'Properties'">
+              <section *ngFor="let item of group.value; let i=index" class="tsd-panel tsd-member" [ngClass]="{'tsd-parent-kind-class': pageType === 'classes','tsd-parent-kind-interface': pageType === 'interfaces'}">
+                <a name="{{item.name}}" id="{{item.name}}" class="tsd-anchor"></a>
+                <h3>
+                  <span *ngIf="item.flags.isProtected" class="tsd-flag ts-flagProtected">Protected</span>
+                  <span *ngIf="item.flags.isStatic" class="tsd-flag ts-flagStatic">Static</span>
+                  <span *ngIf="item.flags.isPrivate" class="tsd-flag ts-flagPrivate">Private</span>
+                  {{item.name}}</h3>
+                <ul class="tsd-signatures" [ngClass]="setNgClass(item)">
+                  <ng-template [ngIf]="item.signatures">
+                    <li *ngFor="let span of item.signatures; let i=index" class="tsd-signature tsd-kind-icon">{{span.name}}<span class="tsd-signature-symbol">(</span>
+                      <ng-template ngFor let-param [ngForOf]="span.parameters" let-i="index">{{param.name}}<span class="tsd-signature-symbol">{{((param.flags && param.flags.isOptional) || param.defaultValue) ? '?: ' : ': '}}</span>
+                        <app-type-doc-types [documentObject]="documentObject" [param]="param.type"></app-type-doc-types>
+                        <ng-template [ngIf]="param.type.typeArguments">
+                          <span class="tsd-signature-symbol"><</span>
+                          <ng-template ngFor let-argument [ngForOf]="param.type.typeArguments" let-j="index" >
+                            <span  *ngIf="j!==0" class="tsd-signature-symbol">,</span>
+                            <app-type-doc-types  [documentObject]="documentObject" [param]="argument"></app-type-doc-types>
+                          </ng-template>                  
+                          <span class="tsd-signature-symbol">></span>
+                          
+                        </ng-template>
+                      
+                        <span *ngIf="i !== span.parameters.length-1" class="tsd-signature-symbol">, </span>
+                      </ng-template><span class="tsd-signature-symbol">)</span>
+                      <ng-template [ngIf]="span.type">
+                        <span class="tsd-signature-symbol">: </span>
+                        <app-type-doc-types [documentObject]="documentObject" [param]="span.type"></app-type-doc-types>
+                      </ng-template>
+                    </li>
+                  </ng-template>
+                  <li *ngIf="item.getSignature" class="tsd-signature tsd-kind-icon">get {{item.name}}<span class="tsd-signature-symbol">(</span>
+                    <ng-template ngFor let-param [ngForOf]="item.getSignature.parameters" let-i="index">
+                      {{param.name}}<span class="tsd-signature-symbol">{{((param.flags && param.flags.isOptional) || param.defaultValue) ? '?: ' : ': '}}</span>
+                      <app-type-doc-types [documentObject]="documentObject" [param]="param.type"></app-type-doc-types>
+                      <ng-template [ngIf]="param.type.typeArguments">
+                        <span class="tsd-signature-symbol"><</span>
+                        <ng-template ngFor let-argument [ngForOf]="param.type.typeArguments" let-j="index" >
+                          <span  *ngIf="j!==0" class="tsd-signature-symbol">,</span>
+                          <app-type-doc-types  [documentObject]="documentObject" [param]="argument"></app-type-doc-types>
+                        </ng-template>                  
+                        <span class="tsd-signature-symbol">></span>
+                        
+                      </ng-template>
+                      <span *ngIf="i !== item.getSignature.parameters.length-1" class="tsd-signature-symbol">, </span>
+                    </ng-template><span class="tsd-signature-symbol">)</span>
+                    <ng-template [ngIf]="item.getSignature.type">
+                      <span class="tsd-signature-symbol">: </span>
+                      <app-type-doc-types [documentObject]="documentObject" [param]="item.getSignature.type"></app-type-doc-types>
+                    </ng-template>
+                  </li>
+                  <li *ngIf="item.setSignature" class="tsd-signature tsd-kind-icon">set {{item.name}}<span class="tsd-signature-symbol">(</span>
+                    <ng-template ngFor let-param [ngForOf]="item.setSignature.parameters" let-i="index">
+                      {{param.name}}<span class="tsd-signature-symbol">{{((param.flags && param.flags.isOptional) || param.defaultValue) ? '?: ' : ': '}}</span>
+                      <app-type-doc-types [documentObject]="documentObject" [param]="param.type"></app-type-doc-types>
+                      <ng-template [ngIf]="param.type.typeArguments">
+                        <span class="tsd-signature-symbol"><</span>
+                        <ng-template ngFor let-argument [ngForOf]="param.type.typeArguments" let-j="index" >
+                          <span  *ngIf="j!==0" class="tsd-signature-symbol">,</span>
+                          <app-type-doc-types  [documentObject]="documentObject" [param]="argument"></app-type-doc-types>
+                        </ng-template>                  
+                        <span class="tsd-signature-symbol">></span>
+                        
+                      </ng-template>
+                      <span *ngIf="i !== item.setSignature.parameters.length-1" class="tsd-signature-symbol">, </span>
+                    </ng-template><span class="tsd-signature-symbol">)</span>
+                    <ng-template [ngIf]="item.setSignature.type">
+                      <span class="tsd-signature-symbol">: </span>
+                      <app-type-doc-types [documentObject]="documentObject" [param]="item.setSignature.type"></app-type-doc-types>
+                    </ng-template>
+                  </li>
+  
+                </ul>
+                <ul class="tsd-descriptions">
+                  <ng-template [ngIf]="item.signatures">
+                    <li *ngFor="let signature of item.signatures; let i=index" class="tsd-description">
+                      <aside class="tsd-sources">
+                        <p *ngIf="signature.inheritedFrom">Inherited from
+                          <ng-template [ngIf]="signature.inheritedFrom.id">
+                            <ng-template ngFor let-name [ngForOf]="signature.inheritedFrom.name.split('.')" let-i="index">
+                              <ng-template [ngIf]="i!==0">.</ng-template><a [routerLink]="jumpOtherPage(i,signature.inheritedFrom,signature.inheritedFrom.id )">{{name}}</a>
+                            </ng-template>
+                          </ng-template>
+                          <ng-template [ngIf]="!signature.inheritedFrom.id">{{signature.inheritedFrom.name}}</ng-template>
+                        </p>
+                        <p *ngIf="signature.overwrites">Overrides
+                          <ng-template [ngIf]="signature.overwrites.id">
+                            <ng-template ngFor let-name [ngForOf]="signature.overwrites.name.split('.')" let-j="index">
+                              <ng-template [ngIf]="j!==0">.</ng-template><a [routerLink]="jumpOtherPage(j,signature.overwrites,signature.overwrites.id )">{{name}}</a>
+                            </ng-template>
+                          </ng-template>
+                          <ng-template [ngIf]="!signature.overwrites.id">{{signature.overwrites.name}}</ng-template>
+                      </p>
+                      </aside>
+                      <app-type-doc-comment *ngIf="signature.comment" [obj]="documentObject" [array] = "documentArray" [comment]="signature.comment"></app-type-doc-comment>
+                      <ng-template [ngIf]="signature.parameters">
+                        <h4 class="tsd-parameters-title">Parameters</h4>
+                        <ul class="tsd-parameters">
+                          <li *ngFor="let parameter of signature.parameters; let i=index">
+                            <h5>
+                              <span *ngIf="parameter.flags && parameter.flags.isOptional && (!parameter.defaultValue)" class="tsd-flag ts-flagOptional">Optional</span>
+                              <span *ngIf="parameter.defaultValue" class="tsd-flag ts-flagDefault value">Default value</span> {{parameter.name}}:
+                              <app-type-doc-types [documentObject]="documentObject" [param]="parameter.type"></app-type-doc-types>
+                              <ng-template [ngIf]="parameter.type.typeArguments">
+                                <span class="tsd-signature-symbol"><</span>
+                                <ng-template ngFor let-argument [ngForOf]="parameter.type.typeArguments" let-j="index" >
+                                  <span  *ngIf="j!==0" class="tsd-signature-symbol">,</span>
+                                  <app-type-doc-types  [documentObject]="documentObject" [param]="argument"></app-type-doc-types>
+                                </ng-template>                  
+                                <span class="tsd-signature-symbol">></span>
+                                
+                              </ng-template>
+                              <span *ngIf="parameter.defaultValue" class="tsd-signature-symbol"> =&nbsp;{{parameter.defaultValue}}</span>
+                            </h5>
+                            <div *ngIf="parameter.comment" class="tsd-comment tsd-typography">
+                              <div class="lead">
+                                <p *ngIf="parameter.comment.shortText">{{parameter.comment.shortText}}</p>
+                              </div>
+                              <p *ngIf="parameter.comment.text">{{parameter.comment.text}}</p>
+                            </div>
+                          </li>
+                        </ul>
+                      </ng-template>
+                      <ng-template [ngIf]="signature.type">
+                        <h4 class="tsd-returns-title">Returns
+                          <app-type-doc-types [documentObject]="documentObject" [param]="signature.type"></app-type-doc-types>
+                        </h4>
+                        <p *ngIf="signature.comment && signature.comment.returns">{{signature.comment.returns}}</p>
+                      </ng-template>
+  
+                    </li>
+                  </ng-template>
+                  <li *ngIf="item.getSignature" class="tsd-description">
+                    <aside class="tsd-sources">
+                      <p *ngIf="item.getSignature.inheritedFrom">Inherited from
+                        <ng-template [ngIf]="item.getSignature.inheritedFrom.id">
+                          <ng-template ngFor let-name [ngForOf]="item.getSignature.inheritedFrom.name.split('.')" let-i="index">
+                            <ng-template [ngIf]="i!==0">.</ng-template><a [routerLink]="jumpOtherPage(i,item.getSignature.inheritedFrom,item.getSignature.inheritedFrom.id )">{{name}}</a>
+                          </ng-template>
+                        </ng-template>
+                        <ng-template [ngIf]="!item.getSignature.inheritedFrom.id">{{item.getSignature.inheritedFrom.name}}</ng-template>
+                      </p>
+                      <p *ngIf="item.getSignature.overwrites">Overrides
+                        <ng-template [ngIf]="item.getSignature.overwrites.id">
+                          <ng-template ngFor let-name [ngForOf]="item.getSignature.overwrites.name.split('.')" let-j="index">
+                            <ng-template [ngIf]="j!==0">.</ng-template><a [routerLink]="jumpOtherPage(j,item.getSignature.overwrites,item.getSignature.overwrites.id )">{{name}}</a>
+                          </ng-template>
+                        </ng-template>
+                        <ng-template [ngIf]="!item.getSignature.overwrites.id">{{item.getSignature.overwrites.name}}</ng-template>
+                    </p>
+                    </aside>
+                    <app-type-doc-comment *ngIf="item.getSignature.comment" [obj]="documentObject" [array] = "documentArray" [comment]="item.getSignature.comment"></app-type-doc-comment>
+                    <ng-template [ngIf]="item.getSignature.parameters">
+                      <h4 class="tsd-parameters-title">Parameters</h4>
+                      <ul class="tsd-parameters">
+                        <li *ngFor="let parameter of item.getSignature.parameters; let i=index">
+                          <h5>
+                            <span *ngIf="parameter.flags && parameter.flags.isOptional && (!parameter.defaultValue)" class="tsd-flag ts-flagOptional">Optional</span>
+                            <span *ngIf="parameter.defaultValue" class="tsd-flag ts-flagDefault value">Default value</span> {{parameter.name}}:
+                            <app-type-doc-types [documentObject]="documentObject" [param]="parameter.type"></app-type-doc-types>
+                            <span *ngIf="parameter.defaultValue" class="tsd-signature-symbol"> =&nbsp;{{parameter.defaultValue}}</span>
+                          </h5>
+                          <div *ngIf="parameter.comment" class="tsd-comment tsd-typography">
+                            <div class="lead">
+                              <p *ngIf="parameter.comment.shortText">{{parameter.comment.shortText}}</p>
+                            </div>
+                            <p *ngIf="parameter.comment.text">{{parameter.comment.text}}</p>
+                          </div>
+                        </li>
+                      </ul>
+                    </ng-template>
+                    <ng-template [ngIf]="item.getSignature.type">
+                      <h4 class="tsd-returns-title">Returns
+                        <app-type-doc-types [documentObject]="documentObject" [param]="item.getSignature.type"></app-type-doc-types>
+                      </h4>
+                      <p *ngIf="item.getSignature.comment && item.getSignature.comment.returns">{{item.getSignature.comment.returns}}</p>
+                    </ng-template>
+  
+                  </li>
+                  <li *ngIf="item.setSignature" class="tsd-description">
+                    <aside class="tsd-sources">
+                      <p *ngIf="item.setSignature.inheritedFrom">Inherited from
+                        <ng-template [ngIf]="item.setSignature.inheritedFrom.id">
+                          <ng-template ngFor let-name [ngForOf]="item.setSignature.inheritedFrom.name.split('.')" let-i="index">
+                            <ng-template [ngIf]="i!==0">.</ng-template><a [routerLink]="jumpOtherPage(i,item.setSignature.inheritedFrom,item.setSignature.inheritedFrom.id )">{{name}}</a>
+                          </ng-template>
+                        </ng-template>
+                        <ng-template [ngIf]="!item.setSignature.inheritedFrom.id">{{item.setSignature.inheritedFrom.name}}</ng-template>
+                      </p>
+                      <p *ngIf="item.setSignature.overwrites">Overrides
+                        <ng-template [ngIf]="item.setSignature.overwrites.id">
+                          <ng-template ngFor let-name [ngForOf]="item.setSignature.overwrites.name.split('.')" let-j="index">
+                            <ng-template [ngIf]="j!==0">.</ng-template><a [routerLink]="jumpOtherPage(j,item.setSignature.overwrites,item.setSignature.overwrites.id )">{{name}}</a>
+                          </ng-template>
+                        </ng-template>
+                        <ng-template [ngIf]="!item.setSignature.overwrites.id">{{item.setSignature.overwrites.name}}</ng-template>
+                    </p>
+                    </aside>
+                    <app-type-doc-comment *ngIf="item.setSignature.comment" [obj]="documentObject" [array] = "documentArray" [comment]="item.setSignature.comment"></app-type-doc-comment>
+                    <ng-template [ngIf]="item.setSignature.parameters">
+                      <h4 class="tsd-parameters-title">Parameters</h4>
+                      <ul class="tsd-parameters">
+                        <li *ngFor="let parameter of item.setSignature.parameters; let i=index">
+                          <h5>
+                            <span *ngIf="parameter.flags && parameter.flags.isOptional && (!parameter.defaultValue)" class="tsd-flag ts-flagOptional">Optional</span>
+                            <span *ngIf="parameter.defaultValue" class="tsd-flag ts-flagDefault value">Default value</span> {{parameter.name}}:
+                            <app-type-doc-types [documentObject]="documentObject" [param]="parameter.type"></app-type-doc-types>
+                            <span *ngIf="parameter.defaultValue" class="tsd-signature-symbol"> =&nbsp;{{parameter.defaultValue}}</span>
+                          </h5>
+                          <div *ngIf="parameter.comment" class="tsd-comment tsd-typography">
+                            <div class="lead">
+                              <p *ngIf="parameter.comment.shortText">{{parameter.comment.shortText}}</p>
+                            </div>
+                            <p *ngIf="parameter.comment.text">{{parameter.comment.text}}</p>
+                          </div>
+                        </li>
+                      </ul>
+                    </ng-template>
+                    <ng-template [ngIf]="item.setSignature.type">
+                      <h4 class="tsd-returns-title">Returns
+                        <app-type-doc-types [documentObject]="documentObject" [param]="item.setSignature.type"></app-type-doc-types>
+                      </h4>
+                      <p *ngIf="item.setSignature.comment && item.setSignature.comment.returns">{{item.setSignature.comment.returns}}</p>
+                    </ng-template>
+  
+                  </li>
+                </ul>
+              </section>
+            </ng-template>
+          </section>
+        </div>
+        <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+          <nav class="tsd-navigation primary">
+            <ul>
+              <li class="globals  ">
+                <a routerLink="../../globals"><em>Globals</em></a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="tsd-navigation secondary menu-sticky">
+            <ul class="before-current">
+              <li *ngFor="let element of beforeElements" [ngClass]="setNgClass(element)">
+                <a [routerLink]="[getComponent(element.kindString),element.routerName]" class="tsd-kind-icon">
+                  {{element.name}}
+                </a>
+              </li>
+            </ul>
+            <ul class="current">
+              <li class="current  tsd-parent-kind-module" [ngClass]="{'tsd-kind-class': pageType === 'classes','tsd-kind-interface': pageType === 'interfaces'}">
+                <a [routerLink]="[getComponent(classObject.kindString),classObject.routerName]" class="tsd-kind-icon">{{classObject.name}}</a>
+                <ul>
+                  <li *ngFor="let class of classObject.children" [ngClass]="setNgClass(class)">
+                    <a (click)="jumpClassElement(class)" class="tsd-kind-icon">{{class.name}}</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="after-current">
+              <li *ngFor="let element of afterElements" [ngClass]="setNgClass(element)">
+                <a [routerLink]="[getComponent(element.kindString),element.routerName]" class="tsd-kind-icon">
+                  {{element.name}}
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+  </main>
+  

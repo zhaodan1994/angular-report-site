@@ -1,0 +1,539 @@
+{
+    "plots": [{
+        "type": "Bar",
+        "name": "p1",
+        "encodings": {
+            "values": [{
+                "field": "Sum of 售价"
+            }],
+            "category": {},
+            "text": [],
+            "color": {
+                "field": "series"
+            },
+            "layout": {
+                "type": "Trellis",
+                "field": "销售日期(Year):D,销售日期(Month):D",
+                "rowSort": {
+                    "order": "Ascending",
+                    "field": "trellisRowSortField"
+                },
+                "columnSort": {
+                    "order": "Ascending",
+                    "field": "trellisColumnSortField"
+                }
+            },
+            "details": {
+                "field": "series",
+                "group": "Stack",
+                "sort": {
+                    "order": "Ascending",
+                    "field": "seriesSortField"
+                }
+            },
+            "size": {},
+            "tooltip": []
+        },
+        "config": {
+            "style": {},
+            "hoverStyle": {
+                "opacity": 0.8,
+                "strokeWidth": 2
+            },
+            "loadAnimation": {
+                "mode": "All",
+                "duration": 600,
+                "easing": "Linear",
+                "staggering": false,
+                "startDelay": 0
+            },
+            "updateAnimation": {
+                "mode": "All",
+                "duration": 600,
+                "easing": "Linear"
+            },
+            "hoverAnimation": true,
+            "trellis": {
+                "style": {},
+                "textStyle": {},
+                "hoverStyle": {
+                    "color": "rgba(0, 0, 0, 0.7)"
+                }
+            },
+            "_valueField": null,
+            "_isConditionFormatNeedDetail": false,
+            "swapAxes": false,
+            "rules": []
+        }
+    }],
+    "config": {
+        "bar": {
+            "bottomWidth": 0.3,
+            "topWidth": 0.7,
+            "neckHeight": 0.3
+        },
+        "textStyle": {
+            "color": "#000000",
+            "fontFamily": "",
+            "fontSize": 13
+        },
+        "selectionMode": "Points",
+        "selectedStyle": {
+            "adorners": false,
+            "opacity": 1,
+            "symbolOpacity": 1
+        },
+        "unselectedStyle": {
+            "adorners": false,
+            "opacity": 0.2,
+            "strokeWidth": 0,
+            "symbolOpacity": 0.2,
+            "symbolStrokeWidth": 0
+        },
+        "plotAreas": [{
+            "legend": {
+                "position": "Right",
+                "titlePosition": "Top",
+                "wrapping": false,
+                "padding": "0,0,0,10",
+                "orientation": "Vertical",
+                "hoverStyle": {
+                    "color": "rgba(0, 0, 0, 0.7)"
+                }
+            },
+            "legends": [{
+                    "type": "Color",
+                    "title": "",
+                    "maxWidth": 0.3,
+                    "maxHeight": 0.3
+                },
+                {
+                    "type": "Size",
+                    "position": "None",
+                    "maxWidth": 0.3,
+                    "maxHeight": 0.3
+                }
+            ],
+            "axes": [{
+                    "plots": [
+                        "p1"
+                    ],
+                    "type": "X",
+                    "scale": {},
+                    "position": "None",
+                    "lineStyle": {
+                        "strokeWidth": 1
+                    },
+                    "textStyle": {},
+                    "labels": true,
+                    "hoverStyle": {
+                        "color": "rgba(0, 0, 0, 0.7)"
+                    },
+                    "title": "",
+                    "format": "G",
+                    "origin": 0,
+                    "reversed": false
+                },
+                {
+                    "plots": [
+                        "p1"
+                    ],
+                    "type": "Y",
+                    "scale": {
+                        "type": "Percentage"
+                    },
+                    "title": "",
+                    "position": "None",
+                    "majorGrid": false,
+                    "majorGridStyle": {
+                        "stroke": "#cccccc",
+                        "strokeWidth": 0.5
+                    },
+                    "lineStyle": {
+                        "strokeWidth": 1
+                    },
+                    "textStyle": {},
+                    "labels": true,
+                    "format": "#,0\u001d"
+                }
+            ]
+        }],
+        "palette": [
+            "#556270",
+            "#4ECDC4",
+            "#C7F464",
+            "#FF6B6B",
+            "#C44D58",
+            "#6977F4"
+        ]
+    },
+    "data": {
+        "name": "sample",
+        "dateFormats": false,
+        "values": [{
+                "销售日期(Year)": 2015,
+                "销售日期(Month)": 3,
+                "销售日期(Quarter)": 1,
+                "series": "Q1",
+                "seriesSortField": 0,
+                "trellisRowSortField": 2,
+                "trellisColumnSortField": 1,
+                "Sum of 售价": 445444
+            },
+            {
+                "销售日期(Year)": 2015,
+                "销售日期(Month)": 12,
+                "销售日期(Quarter)": 4,
+                "series": "Q4",
+                "seriesSortField": 3,
+                "trellisRowSortField": 11,
+                "trellisColumnSortField": 1,
+                "Sum of 售价": 362389
+            },
+            {
+                "销售日期(Year)": 2015,
+                "销售日期(Month)": 6,
+                "销售日期(Quarter)": 2,
+                "series": "Q2",
+                "seriesSortField": 1,
+                "trellisRowSortField": 5,
+                "trellisColumnSortField": 1,
+                "Sum of 售价": 425221
+            },
+            {
+                "销售日期(Year)": 2015,
+                "销售日期(Month)": 5,
+                "销售日期(Quarter)": 2,
+                "series": "Q2",
+                "seriesSortField": 1,
+                "trellisRowSortField": 4,
+                "trellisColumnSortField": 1,
+                "Sum of 售价": 416023
+            },
+            {
+                "销售日期(Year)": 2015,
+                "销售日期(Month)": 7,
+                "销售日期(Quarter)": 3,
+                "series": "Q3",
+                "seriesSortField": 2,
+                "trellisRowSortField": 6,
+                "trellisColumnSortField": 1,
+                "Sum of 售价": 420475
+            },
+            {
+                "销售日期(Year)": 2015,
+                "销售日期(Month)": 11,
+                "销售日期(Quarter)": 4,
+                "series": "Q4",
+                "seriesSortField": 3,
+                "trellisRowSortField": 10,
+                "trellisColumnSortField": 1,
+                "Sum of 售价": 413920
+            },
+            {
+                "销售日期(Year)": 2015,
+                "销售日期(Month)": 2,
+                "销售日期(Quarter)": 1,
+                "series": "Q1",
+                "seriesSortField": 0,
+                "trellisRowSortField": 1,
+                "trellisColumnSortField": 1,
+                "Sum of 售价": 363032
+            },
+            {
+                "销售日期(Year)": 2015,
+                "销售日期(Month)": 4,
+                "销售日期(Quarter)": 2,
+                "series": "Q2",
+                "seriesSortField": 1,
+                "trellisRowSortField": 3,
+                "trellisColumnSortField": 1,
+                "Sum of 售价": 481641
+            },
+            {
+                "销售日期(Year)": 2015,
+                "销售日期(Month)": 8,
+                "销售日期(Quarter)": 3,
+                "series": "Q3",
+                "seriesSortField": 2,
+                "trellisRowSortField": 7,
+                "trellisColumnSortField": 1,
+                "Sum of 售价": 381650
+            },
+            {
+                "销售日期(Year)": 2015,
+                "销售日期(Month)": 9,
+                "销售日期(Quarter)": 3,
+                "series": "Q3",
+                "seriesSortField": 2,
+                "trellisRowSortField": 8,
+                "trellisColumnSortField": 1,
+                "Sum of 售价": 365870
+            },
+            {
+                "销售日期(Year)": 2015,
+                "销售日期(Month)": 1,
+                "销售日期(Quarter)": 1,
+                "series": "Q1",
+                "seriesSortField": 0,
+                "trellisRowSortField": 0,
+                "trellisColumnSortField": 1,
+                "Sum of 售价": 416951
+            },
+            {
+                "销售日期(Year)": 2015,
+                "销售日期(Month)": 10,
+                "销售日期(Quarter)": 4,
+                "series": "Q4",
+                "seriesSortField": 3,
+                "trellisRowSortField": 9,
+                "trellisColumnSortField": 1,
+                "Sum of 售价": 421066
+            },
+            {
+                "销售日期(Year)": 2016,
+                "销售日期(Month)": 3,
+                "销售日期(Quarter)": 1,
+                "series": "Q1",
+                "seriesSortField": 0,
+                "trellisRowSortField": 2,
+                "trellisColumnSortField": 2,
+                "Sum of 售价": 417502
+            },
+            {
+                "销售日期(Year)": 2016,
+                "销售日期(Month)": 12,
+                "销售日期(Quarter)": 4,
+                "series": "Q4",
+                "seriesSortField": 3,
+                "trellisRowSortField": 11,
+                "trellisColumnSortField": 2,
+                "Sum of 售价": 427425
+            },
+            {
+                "销售日期(Year)": 2016,
+                "销售日期(Month)": 6,
+                "销售日期(Quarter)": 2,
+                "series": "Q2",
+                "seriesSortField": 1,
+                "trellisRowSortField": 5,
+                "trellisColumnSortField": 2,
+                "Sum of 售价": 443475
+            },
+            {
+                "销售日期(Year)": 2016,
+                "销售日期(Month)": 5,
+                "销售日期(Quarter)": 2,
+                "series": "Q2",
+                "seriesSortField": 1,
+                "trellisRowSortField": 4,
+                "trellisColumnSortField": 2,
+                "Sum of 售价": 406113
+            },
+            {
+                "销售日期(Year)": 2016,
+                "销售日期(Month)": 7,
+                "销售日期(Quarter)": 3,
+                "series": "Q3",
+                "seriesSortField": 2,
+                "trellisRowSortField": 6,
+                "trellisColumnSortField": 2,
+                "Sum of 售价": 429577
+            },
+            {
+                "销售日期(Year)": 2016,
+                "销售日期(Month)": 11,
+                "销售日期(Quarter)": 4,
+                "series": "Q4",
+                "seriesSortField": 3,
+                "trellisRowSortField": 10,
+                "trellisColumnSortField": 2,
+                "Sum of 售价": 357823
+            },
+            {
+                "销售日期(Year)": 2016,
+                "销售日期(Month)": 2,
+                "销售日期(Quarter)": 1,
+                "series": "Q1",
+                "seriesSortField": 0,
+                "trellisRowSortField": 1,
+                "trellisColumnSortField": 2,
+                "Sum of 售价": 383569
+            },
+            {
+                "销售日期(Year)": 2016,
+                "销售日期(Month)": 4,
+                "销售日期(Quarter)": 2,
+                "series": "Q2",
+                "seriesSortField": 1,
+                "trellisRowSortField": 3,
+                "trellisColumnSortField": 2,
+                "Sum of 售价": 418926
+            },
+            {
+                "销售日期(Year)": 2016,
+                "销售日期(Month)": 8,
+                "销售日期(Quarter)": 3,
+                "series": "Q3",
+                "seriesSortField": 2,
+                "trellisRowSortField": 7,
+                "trellisColumnSortField": 2,
+                "Sum of 售价": 437327
+            },
+            {
+                "销售日期(Year)": 2016,
+                "销售日期(Month)": 9,
+                "销售日期(Quarter)": 3,
+                "series": "Q3",
+                "seriesSortField": 2,
+                "trellisRowSortField": 8,
+                "trellisColumnSortField": 2,
+                "Sum of 售价": 382378
+            },
+            {
+                "销售日期(Year)": 2016,
+                "销售日期(Month)": 1,
+                "销售日期(Quarter)": 1,
+                "series": "Q1",
+                "seriesSortField": 0,
+                "trellisRowSortField": 0,
+                "trellisColumnSortField": 2,
+                "Sum of 售价": 404935
+            },
+            {
+                "销售日期(Year)": 2016,
+                "销售日期(Month)": 10,
+                "销售日期(Quarter)": 4,
+                "series": "Q4",
+                "seriesSortField": 3,
+                "trellisRowSortField": 9,
+                "trellisColumnSortField": 2,
+                "Sum of 售价": 414376
+            },
+            {
+                "销售日期(Year)": 2014,
+                "销售日期(Month)": 3,
+                "销售日期(Quarter)": 1,
+                "series": "Q1",
+                "seriesSortField": 0,
+                "trellisRowSortField": 2,
+                "trellisColumnSortField": 0,
+                "Sum of 售价": 427106
+            },
+            {
+                "销售日期(Year)": 2014,
+                "销售日期(Month)": 12,
+                "销售日期(Quarter)": 4,
+                "series": "Q4",
+                "seriesSortField": 3,
+                "trellisRowSortField": 11,
+                "trellisColumnSortField": 0,
+                "Sum of 售价": 416184
+            },
+            {
+                "销售日期(Year)": 2014,
+                "销售日期(Month)": 6,
+                "销售日期(Quarter)": 2,
+                "series": "Q2",
+                "seriesSortField": 1,
+                "trellisRowSortField": 5,
+                "trellisColumnSortField": 0,
+                "Sum of 售价": 374039
+            },
+            {
+                "销售日期(Year)": 2014,
+                "销售日期(Month)": 5,
+                "销售日期(Quarter)": 2,
+                "series": "Q2",
+                "seriesSortField": 1,
+                "trellisRowSortField": 4,
+                "trellisColumnSortField": 0,
+                "Sum of 售价": 390863
+            },
+            {
+                "销售日期(Year)": 2014,
+                "销售日期(Month)": 7,
+                "销售日期(Quarter)": 3,
+                "series": "Q3",
+                "seriesSortField": 2,
+                "trellisRowSortField": 6,
+                "trellisColumnSortField": 0,
+                "Sum of 售价": 419647
+            },
+            {
+                "销售日期(Year)": 2014,
+                "销售日期(Month)": 11,
+                "销售日期(Quarter)": 4,
+                "series": "Q4",
+                "seriesSortField": 3,
+                "trellisRowSortField": 10,
+                "trellisColumnSortField": 0,
+                "Sum of 售价": 433703
+            },
+            {
+                "销售日期(Year)": 2014,
+                "销售日期(Month)": 2,
+                "销售日期(Quarter)": 1,
+                "series": "Q1",
+                "seriesSortField": 0,
+                "trellisRowSortField": 1,
+                "trellisColumnSortField": 0,
+                "Sum of 售价": 339457
+            },
+            {
+                "销售日期(Year)": 2014,
+                "销售日期(Month)": 4,
+                "销售日期(Quarter)": 2,
+                "series": "Q2",
+                "seriesSortField": 1,
+                "trellisRowSortField": 3,
+                "trellisColumnSortField": 0,
+                "Sum of 售价": 409432
+            },
+            {
+                "销售日期(Year)": 2014,
+                "销售日期(Month)": 8,
+                "销售日期(Quarter)": 3,
+                "series": "Q3",
+                "seriesSortField": 2,
+                "trellisRowSortField": 7,
+                "trellisColumnSortField": 0,
+                "Sum of 售价": 393679
+            },
+            {
+                "销售日期(Year)": 2014,
+                "销售日期(Month)": 9,
+                "销售日期(Quarter)": 3,
+                "series": "Q3",
+                "seriesSortField": 2,
+                "trellisRowSortField": 8,
+                "trellisColumnSortField": 0,
+                "Sum of 售价": 456662
+            },
+            {
+                "销售日期(Year)": 2014,
+                "销售日期(Month)": 1,
+                "销售日期(Quarter)": 1,
+                "series": "Q1",
+                "seriesSortField": 0,
+                "trellisRowSortField": 0,
+                "trellisColumnSortField": 0,
+                "Sum of 售价": 412285
+            },
+            {
+                "销售日期(Year)": 2014,
+                "销售日期(Month)": 10,
+                "销售日期(Quarter)": 4,
+                "series": "Q4",
+                "seriesSortField": 3,
+                "trellisRowSortField": 9,
+                "trellisColumnSortField": 0,
+                "Sum of 售价": 406678
+            }
+        ]
+    },
+    "showTooltip": true,
+    "chartType": "funnel",
+    "expand": false,
+    "renderMethod": "Canvas"
+}
