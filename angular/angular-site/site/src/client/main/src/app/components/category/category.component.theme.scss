@@ -1,0 +1,39 @@
+@import "~@angular/material/theming";
+ 
+@mixin category-theme($theme) {
+ $primary: map-get($theme, primary);
+ $accent: map-get($theme, accent);
+ .app-category {
+    background-color: rgba(255, 255, 255, .87);
+  
+    .mat-accordion {
+      .mat-expansion-panel {
+        .mat-expansion-panel-header {
+  
+          .mat-expansion-indicator::after,
+          .mat-expansion-panel-header-description {
+            color: rgba(255, 255, 255, .87);
+          }
+  
+          color: rgba(255, 255, 255, .87);
+          background-color: mat-color($primary, 600);
+        }
+  
+        .mat-expansion-panel-header.mat-expanded:focus,
+        .mat-expansion-panel-header.mat-expanded:hover {
+          background-color: mat-color($primary, 400);
+        }
+      }
+  
+      .mat-expansion-panel:not(.mat-expanded) {
+        .mat-expansion-panel-header:not([aria-disabled=true]):hover {
+          background-color: mat-color($primary, 400);
+        }
+      }
+    }
+  
+    .mat-list-item.active {
+      background: rgba(0, 0, 0, .1);
+    }
+  }
+}

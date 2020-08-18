@@ -1,0 +1,48 @@
+<section *ngIf="model != null">
+    <div class="header">
+      <h4>{{model.title}}</h4>
+      <span>{{model.description}}</span>
+    </div>
+    <div class="content">
+      <div class="left pane">
+        <mat-tab-group>
+          <mat-tab *ngIf="(!isEdit) && view===1" label="SNIPPET">
+            <ng-template matTabContent>
+              <app-snippet-editor *ngIf="option != null" [model]="option.snippet" (switchEnumValue) = "refresh($event, '')"></app-snippet-editor>
+            </ng-template>
+          </mat-tab>
+          <mat-tab *ngIf="(!isEdit) && view===0 " label="PLUGIN" >
+            <ng-template matTabContent>
+              <app-code-editor *ngIf="showFullModel" (getValue)= "js.pre = pluginOption.value = $event" [options]="pluginOption"></app-code-editor> 
+            </ng-template>
+          </mat-tab>
+          <mat-tab label="FULL MODEL" *ngIf="showFullModel">
+            <ng-template matTabContent>
+              <app-code-editor *ngIf="modelOption.value!== ''"  (getValue)= "modelOption.value = $event" [options]="modelOption"></app-code-editor> 
+            </ng-template>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+      <div class="right pane"  #rightPan>
+        <ul class="components">
+          <li class="component">
+            <button class = "refreshButton" mat-icon-button  (click) = "refresh(null, '')">
+              <mat-icon class="mat-icon-rtl-mirror">refresh</mat-icon>
+            </button>
+          </li>
+          <li class="component" *ngIf="!isEdit">
+            <mat-form-field >
+              <mat-select #matSelect value="SVG" disableOptionCentering="true" (selectionChange)="refresh(null, matSelect.value)">
+                <mat-option value="SVG">SVG </mat-option>
+                <mat-option value="Canvas">Canvas </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </li>
+        </ul>
+        <app-plot-viewer *ngIf="showPlotViewer && option!= null" [model]="option.fullModel" [js]="js" [isEventView] = "view === 4" (isLoaded) = "showFullModel = $event"></app-plot-viewer>
+        <div class="overlay" *ngIf="waiting">
+          <mat-spinner diameter="48" strokeWidth="5" *ngIf="model.model.fullModel == null"></mat-spinner>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,5 @@
+[
+    ["cases", "bar", "scatter", "area_chart"],
+    ["cases", "bar", "line", "line_chart"],
+    ["cases", "bar", "line", "scatter"]
+]

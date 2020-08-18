@@ -1,0 +1,214 @@
+.mdl-layout__content {
+    display: block !important;
+  }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+.tsd-page-title {
+    padding: 70px 0 20px 0;
+    margin: 0 0 40px 0;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+.tsd-breadcrumb {
+    margin: 0;
+    padding: 0;
+    color: #808080;
+}
+.tsd-breadcrumb li {
+    display: inline;
+}
+.tsd-breadcrumb a {
+    color: #808080;
+    text-decoration: none;
+}
+.tsd-breadcrumb li:after {
+    content: " / ";
+}
+
+.documentation h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+    line-height: initial;
+}
+.tsd-page-title h1 {
+    margin: 0;
+}
+.container-main {
+    padding-bottom: 200px;
+}
+.row {
+    position: relative;
+    margin: 0 -10px;
+}
+.col-8 {
+    width: 66.66667%;
+}
+.col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11 {
+    box-sizing: border-box;
+    float: left;
+    padding: 0 10px;
+}
+.documentation .col > :last-child, .documentation .col-1 > :last-child, .documentation .col-2 > :last-child, .documentation .col-3 > :last-child, .documentation .col-4 > :last-child, .documentation .col-5 > :last-child, .documentation .col-6 > :last-child, .documentation .col-7 > :last-child, .documentation .col-8 > :last-child, .documentation .col-9 > :last-child, .documentation .col-10 > :last-child, .documentation .col-11 > :last-child, .documentation .tsd-panel > :last-child, ul.tsd-descriptions > li > :last-child, .documentation .col > :last-child > :last-child, .documentation .col-1 > :last-child > :last-child, .documentation .col-2 > :last-child > :last-child, .documentation .col-3 > :last-child > :last-child, .documentation .col-4 > :last-child > :last-child, .documentation .col-5 > :last-child > :last-child, .documentation .col-6 > :last-child > :last-child, .documentation .col-7 > :last-child > :last-child, .documentation .col-8 > :last-child > :last-child, .documentation .col-9 > :last-child > :last-child, .documentation .col-10 > :last-child > :last-child, .documentation .col-11 > :last-child > :last-child, .documentation .tsd-panel > :last-child > :last-child, ul.tsd-descriptions > li > :last-child > :last-child, .documentation .col > :last-child > :last-child > :last-child, .documentation .col-1 > :last-child > :last-child > :last-child, .documentation .col-2 > :last-child > :last-child > :last-child, .documentation .col-3 > :last-child > :last-child > :last-child, .documentation .col-4 > :last-child > :last-child > :last-child, .documentation .col-5 > :last-child > :last-child > :last-child, .documentation .col-6 > :last-child > :last-child > :last-child, .documentation .col-7 > :last-child > :last-child > :last-child, .documentation .col-8 > :last-child > :last-child > :last-child, .documentation .col-9 > :last-child > :last-child > :last-child, .documentation .col-10 > :last-child > :last-child > :last-child, .documentation .col-11 > :last-child > :last-child > :last-child, .documentation .tsd-panel > :last-child > :last-child > :last-child, ul.tsd-descriptions > li > :last-child > :last-child > :last-child {
+    margin-bottom: 0;
+}
+.documentation .col > :first-child, .documentation .col-1 > :first-child, .documentation .col-2 > :first-child, .documentation .col-3 > :first-child, .documentation .col-4 > :first-child, .documentation .col-5 > :first-child, .documentation .col-6 > :first-child, .documentation .col-7 > :first-child, .documentation .col-8 > :first-child, .documentation .col-9 > :first-child, .documentation .col-10 > :first-child, .documentation .col-11 > :first-child, .documentation .tsd-panel > :first-child, .documentation ul.tsd-descriptions > li > :first-child, .documentation .col > :first-child > :first-child, .documentation .col-1 > :first-child > :first-child, .documentation .col-2 > :first-child > :first-child, .documentation .col-3 > :first-child > :first-child, .documentation .col-4 > :first-child > :first-child, .documentation .col-5 > :first-child > :first-child, .documentation .col-6 > :first-child > :first-child, .documentation .col-7 > :first-child > :first-child, .documentation .col-8 > :first-child > :first-child, .documentation .col-9 > :first-child > :first-child, .documentation .col-10 > :first-child > :first-child, .documentation .col-11 > :first-child > :first-child, .documentation .tsd-panel > :first-child > :first-child, ul.tsd-descriptions > li > :first-child > :first-child, .documentation .col > :first-child > :first-child > :first-child, .documentation .col-1 > :first-child > :first-child > :first-child, .documentation .col-2 > :first-child > :first-child > :first-child, .documentation .col-3 > :first-child > :first-child > :first-child, .documentation .col-4 > :first-child > :first-child > :first-child, .documentation .col-5 > :first-child > :first-child > :first-child, .documentation .col-6 > :first-child > :first-child > :first-child, .documentation .col-7 > :first-child > :first-child > :first-child, .documentation .col-8 > :first-child > :first-child > :first-child, .documentation .col-9 > :first-child > :first-child > :first-child, .documentation .col-10 > :first-child > :first-child > :first-child, .documentation .col-11 > :first-child > :first-child > :first-child, .documentation .tsd-panel > :first-child > :first-child > :first-child, ul.tsd-descriptions > li > :first-child > :first-child > :first-child {
+    margin-top: 0;
+}
+.documentation .tsd-panel-group {
+    margin: 60px 0;
+}
+.documentation .tsd-panel-group > h1, .documentation .tsd-panel-group > h2, .documentation .tsd-panel-group > h3 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.documentation h2 {
+    font-size: 1.5em;
+    margin: 0.83em 0;
+    line-height: initial;
+}
+.documentation .tsd-panel {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
+.documentation .tsd-index-panel .tsd-index-content {
+    margin-bottom: -30px !important;
+}
+.documentation .tsd-index-panel .tsd-index-section {
+    margin-bottom: 30px !important;
+    margin: 0;
+}
+.documentation h4, .documentation .tsd-index-panel h3 {
+    font-size: 1em;
+    margin: 1.33em 0;
+    line-height: initial;
+}
+.documentation .tsd-index-panel h3 {
+    margin: 0 -20px 10px -20px;
+    padding: 0 20px 10px 20px;
+    border-bottom: 1px solid #eee;
+}
+.documentation .tsd-index-panel ul.tsd-index-list {
+    -moz-column-count: 3;
+    -ms-column-count: 3;
+    -o-column-count: 3;
+    column-count: 3;
+    -moz-column-gap: 20px;
+    -ms-column-gap: 20px;
+    -o-column-gap: 20px;
+    column-gap: 20px;
+    padding: 0;
+    list-style: none;
+    line-height: 1.333em;
+}
+
+dl, menu, ol, ul {
+    margin: 1em 0;
+}
+.documentation .tsd-index-panel ul.tsd-index-list li {
+    -moz-column-break-inside: avoid;
+    -ms-column-break-inside: avoid;
+    -o-column-break-inside: avoid;
+    -webkit-page-break-inside: avoid;
+    -moz-page-break-inside: avoid;
+    -ms-page-break-inside: avoid;
+    -o-page-break-inside: avoid;
+    page-break-inside: avoid;
+}
+.documentation .tsd-index-panel a, .documentation .tsd-index-panel .tsd-parent-kind-module a {
+    color: #9600ff;
+}
+.tsd-kind-icon {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    text-indent: -20px;
+}
+a {
+    color: #4da6ff;
+    text-decoration: none;
+}
+.tsd-kind-external-module > .tsd-kind-icon:before {
+    background-position: 0px -102px;
+}
+.tsd-kind-icon:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 17px;
+    height: 17px;
+    margin: 0 3px 2px 0;
+    background-image: url(../../../../../../../node_modules/typedoc-default-themes/bin/default/assets/images/icons.png);
+}
+@media (min-width: 901px) {.documentation .menu-sticky-wrap {
+    position: static;
+}}
+
+.col-4 {
+    width: 33.33333%;
+}
+.row:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+}
+.documentation .tsd-navigation.primary {
+    padding-bottom: 40px;
+}
+.documentation .tsd-navigation {
+    padding: 0 0 0 40px;
+}
+.documentation .tsd-navigation.primary > ul {
+    border-bottom: 1px solid #eee;
+}
+.documentation .tsd-navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.documentation .tsd-navigation.primary li {
+    border-top: 1px solid #eee;
+}
+.documentation .tsd-navigation li {
+    padding: 0;
+}
+.documentation .tsd-navigation.primary ul li a {
+    padding-left: 5px;
+}
+.documentation .tsd-navigation.primary a {
+    display: block;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.documentation .tsd-navigation a {
+    display: block;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-left: 2px solid transparent;
+    color: #222;
+    text-decoration: none;
+    transition: border-left-color 0.1s;
+}
+.documentation .tsd-navigation.primary li.globals + li > span, .documentation .tsd-navigation.primary li.globals + li > a {
+    padding-top: 20px;
+}
+.tsd-kind-icon {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    text-indent: -20px;
+}
+.documentation .tsd-navigation.secondary ul {
+    transition: opacity 0.2s;
+}

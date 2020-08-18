@@ -1,0 +1,2603 @@
+{
+  "plots": [
+    {
+      "type": "Line",
+      "name":"p1",
+      "encodings": {
+        "values": [
+          {
+            "field": "price"
+          }
+        ],
+        "category": {
+          "field": "region"
+        },
+        "layout": {
+          "type": "Trellis",
+          "field": ",department"
+        },
+        "color": {
+          "field": "series"
+        },
+        "details": {
+          "field": "series",
+          "group": "Cluster"
+        },
+        "text": [
+          {
+            "field": "price"
+          }
+        ]
+      }
+    }
+  ],
+     "config": {
+    "plotAreas": [
+      {
+        "axes": [
+          {
+            "plots": [
+              "p1"
+            ],
+            "unitLabel": {
+              "text": "Country UnitLabel",
+              "slabelAngle": -40,
+              "textStyle": {
+                "padding": "10",
+                "fontFamily": "Times New Roman",
+                "fontSize": "24",
+                "color": "red"
+              },
+              "style": {
+                "backgroundColor": "rgba(255,0,0,0.1)",
+                "stroke": "green",
+                "strokeWidth": 2
+              }
+            },
+            "type": "X"
+          },
+          {
+            "plots": [
+              "p1"
+            ],
+            "unitLabel": {
+              "text": "Millions",
+              "slabelAngle": 10,
+              "style": {
+                "backgroundColor": "rgba(255,255,0,0.1)",
+                "stroke": "red",
+                "strokeWidth": 15
+              }
+            },
+            "type": "Y"
+          }
+        ]
+      }
+    ]
+  },
+  "data": {
+    "name": "sample",
+    "values": [
+      {
+        "region": "United States",
+        "product": "SP",
+        "department": "DTDx",
+        "payment": "POS",
+        "series": "POS",
+        "price": 795
+      },
+      {
+        "region": "United States",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "POS",
+        "series": "POS",
+        "price": 2090
+      },
+      {
+        "region": "United States",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "POS",
+        "series": "POS",
+        "price": 5979
+      },
+      {
+        "region": "United States",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "POS",
+        "series": "POS",
+        "price": 3385
+      },
+      {
+        "region": "United States",
+        "product": "misc",
+        "department": "DTDx",
+        "payment": "POS",
+        "series": "POS",
+        "price": 1599
+      },
+      {
+        "region": "United States",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "POS",
+        "series": "POS",
+        "price": 3693
+      },
+      {
+        "region": "United States",
+        "product": "misc",
+        "department": "DTD3",
+        "payment": "POS",
+        "series": "POS",
+        "price": 799
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTDx",
+        "payment": "POS",
+        "series": "POS",
+        "price": 1599
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "POS",
+        "series": "POS",
+        "price": 2398
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "POS",
+        "series": "POS",
+        "price": 1495
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "POS",
+        "series": "POS",
+        "price": 6290
+      },
+      {
+        "region": "United States",
+        "product": "C1",
+        "department": "DTDx",
+        "payment": "POS",
+        "series": "POS",
+        "price": 1995
+      },
+      {
+        "region": "United States",
+        "product": "C1",
+        "department": "DTD2",
+        "payment": "POS",
+        "series": "POS",
+        "price": 3490
+      },
+      {
+        "region": "Erope",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "POS",
+        "series": "POS",
+        "price": 1598
+      },
+      {
+        "region": "Erope",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "POS",
+        "series": "POS",
+        "price": 795
+      },
+      {
+        "region": "Erope",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "POS",
+        "series": "POS",
+        "price": 1599
+      },
+      {
+        "region": "Erope",
+        "product": "misc",
+        "department": "DTD3",
+        "payment": "POS",
+        "series": "POS",
+        "price": 1599
+      },
+      {
+        "region": "Erope",
+        "product": "C1",
+        "department": "DTDx",
+        "payment": "POS",
+        "series": "POS",
+        "price": 895
+      },
+      {
+        "region": "Erope",
+        "product": "C1",
+        "department": "DTD2",
+        "payment": "POS",
+        "series": "POS",
+        "price": 3990
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTDx",
+        "payment": "POS",
+        "series": "POS",
+        "price": 795
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "POS",
+        "series": "POS",
+        "price": 2590
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "POS",
+        "series": "POS",
+        "price": 2090
+      },
+      {
+        "region": "China",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "POS",
+        "series": "POS",
+        "price": 799
+      },
+      {
+        "region": "China",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "POS",
+        "series": "POS",
+        "price": 1599
+      },
+      {
+        "region": "China",
+        "product": "misc",
+        "department": "DTD3",
+        "payment": "POS",
+        "series": "POS",
+        "price": 1599
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTDx",
+        "payment": "POS",
+        "series": "POS",
+        "price": 799
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "POS",
+        "series": "POS",
+        "price": 4589
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "POS",
+        "series": "POS",
+        "price": 6598
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "POS",
+        "series": "POS",
+        "price": 799
+      },
+      {
+        "region": "China",
+        "product": "C1",
+        "department": "DTDx",
+        "payment": "POS",
+        "series": "POS",
+        "price": 895
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTDx",
+        "payment": "POS",
+        "series": "POS",
+        "price": 2090
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "POS",
+        "series": "POS",
+        "price": 7270
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "POS",
+        "series": "POS",
+        "price": 8667
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "POS",
+        "series": "POS",
+        "price": 2893
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTDx",
+        "payment": "POS",
+        "series": "POS",
+        "price": 2398
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "POS",
+        "series": "POS",
+        "price": 6396
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "POS",
+        "series": "POS",
+        "price": 799
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTD3",
+        "payment": "POS",
+        "series": "POS",
+        "price": 5596
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTDx",
+        "payment": "POS",
+        "series": "POS",
+        "price": 799
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "POS",
+        "series": "POS",
+        "price": 3789
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "POS",
+        "series": "POS",
+        "price": 17090
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "POS",
+        "series": "POS",
+        "price": 4691
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTDx",
+        "payment": "POS",
+        "series": "POS",
+        "price": 895
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTD2",
+        "payment": "POS",
+        "series": "POS",
+        "price": 1995
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTD1",
+        "payment": "POS",
+        "series": "POS",
+        "price": 2390
+      },
+      {
+        "region": "Other",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "POS",
+        "series": "POS",
+        "price": 795
+      },
+      {
+        "region": "Other",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "POS",
+        "series": "POS",
+        "price": 1295
+      },
+      {
+        "region": "Other",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "POS",
+        "series": "POS",
+        "price": 1599
+      },
+      {
+        "region": "Other",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "POS",
+        "series": "POS",
+        "price": 1598
+      },
+      {
+        "region": "Other",
+        "product": "C1",
+        "department": "DTD2",
+        "payment": "POS",
+        "series": "POS",
+        "price": 1995
+      },
+      {
+        "region": "United States",
+        "product": "SP",
+        "department": "DTDx",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 799
+      },
+      {
+        "region": "United States",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 12843
+      },
+      {
+        "region": "United States",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 5778
+      },
+      {
+        "region": "United States",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 4483
+      },
+      {
+        "region": "United States",
+        "product": "misc",
+        "department": "DTDx",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 2398
+      },
+      {
+        "region": "United States",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 10888
+      },
+      {
+        "region": "United States",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 6394
+      },
+      {
+        "region": "United States",
+        "product": "misc",
+        "department": "DTD3",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 1599
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTDx",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 2397
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 43871
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 17373
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 18484
+      },
+      {
+        "region": "United States",
+        "product": "C1",
+        "department": "DTDx",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 895
+      },
+      {
+        "region": "United States",
+        "product": "C1",
+        "department": "DTD2",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 7875
+      },
+      {
+        "region": "United States",
+        "product": "C1",
+        "department": "DTD1",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 12865
+      },
+      {
+        "region": "United States",
+        "product": "C1",
+        "department": "DTD3",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 7070
+      },
+      {
+        "region": "Erope",
+        "product": "SP",
+        "department": "DTDx",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 1295
+      },
+      {
+        "region": "Erope",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 5278
+      },
+      {
+        "region": "Erope",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 1295
+      },
+      {
+        "region": "Erope",
+        "product": "misc",
+        "department": "DTDx",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 1599
+      },
+      {
+        "region": "Erope",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 2398
+      },
+      {
+        "region": "Erope",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 3198
+      },
+      {
+        "region": "Erope",
+        "product": "misc",
+        "department": "DTD3",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 1295
+      },
+      {
+        "region": "Erope",
+        "product": "AR",
+        "department": "DTDx",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 799
+      },
+      {
+        "region": "Erope",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 12294
+      },
+      {
+        "region": "Erope",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 7294
+      },
+      {
+        "region": "Erope",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 6395
+      },
+      {
+        "region": "Erope",
+        "product": "C1",
+        "department": "DTDx",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 895
+      },
+      {
+        "region": "Erope",
+        "product": "C1",
+        "department": "DTD2",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 895
+      },
+      {
+        "region": "Erope",
+        "product": "C1",
+        "department": "DTD1",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 1995
+      },
+      {
+        "region": "Erope",
+        "product": "C1",
+        "department": "DTD3",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 1495
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTDx",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 3885
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 4684
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 3192
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 3688
+      },
+      {
+        "region": "China",
+        "product": "misc",
+        "department": "DTDx",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 2398
+      },
+      {
+        "region": "China",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 9290
+      },
+      {
+        "region": "China",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 2398
+      },
+      {
+        "region": "China",
+        "product": "misc",
+        "department": "DTD3",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 3997
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTDx",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 5799
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 6186
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 20079
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 14692
+      },
+      {
+        "region": "China",
+        "product": "C1",
+        "department": "DTDx",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 895
+      },
+      {
+        "region": "China",
+        "product": "C1",
+        "department": "DTD2",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 2890
+      },
+      {
+        "region": "China",
+        "product": "C1",
+        "department": "DTD1",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 9770
+      },
+      {
+        "region": "China",
+        "product": "C1",
+        "department": "DTD3",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 895
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTDx",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 4786
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 20318
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 17933
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 10458
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTDx",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 4797
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 11991
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 23869
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTD3",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 7691
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTDx",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 8196
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 37247
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 49877
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 14487
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTDx",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 3990
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTD2",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 11365
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTD1",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 13145
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTD3",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 11965
+      },
+      {
+        "region": "Other",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 3684
+      },
+      {
+        "region": "Other",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 2889
+      },
+      {
+        "region": "Other",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 2090
+      },
+      {
+        "region": "Other",
+        "product": "misc",
+        "department": "DTDx",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 2398
+      },
+      {
+        "region": "Other",
+        "product": "misc",
+        "department": "DTD3",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 1599
+      },
+      {
+        "region": "Other",
+        "product": "AR",
+        "department": "DTDx",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 2398
+      },
+      {
+        "region": "Other",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 1599
+      },
+      {
+        "region": "Other",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 7398
+      },
+      {
+        "region": "Other",
+        "product": "C1",
+        "department": "DTD2",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 1495
+      },
+      {
+        "region": "Other",
+        "product": "C1",
+        "department": "DTD1",
+        "payment": "Bank Transfer",
+        "series": "Bank Transfer",
+        "price": 2890
+      },
+      {
+        "region": "United States",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Check",
+        "series": "Check",
+        "price": 5782
+      },
+      {
+        "region": "United States",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Check",
+        "series": "Check",
+        "price": 3385
+      },
+      {
+        "region": "United States",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "Check",
+        "series": "Check",
+        "price": 2590
+      },
+      {
+        "region": "United States",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Check",
+        "series": "Check",
+        "price": 1599
+      },
+      {
+        "region": "United States",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "Check",
+        "series": "Check",
+        "price": 3198
+      },
+      {
+        "region": "United States",
+        "product": "misc",
+        "department": "DTD3",
+        "payment": "Check",
+        "series": "Check",
+        "price": 7578
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Check",
+        "series": "Check",
+        "price": 13789
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Check",
+        "series": "Check",
+        "price": 4588
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "Check",
+        "series": "Check",
+        "price": 11883
+      },
+      {
+        "region": "United States",
+        "product": "C1",
+        "department": "DTD3",
+        "payment": "Check",
+        "series": "Check",
+        "price": 6380
+      },
+      {
+        "region": "Erope",
+        "product": "SP",
+        "department": "DTDx",
+        "payment": "Check",
+        "series": "Check",
+        "price": 799
+      },
+      {
+        "region": "Erope",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Check",
+        "series": "Check",
+        "price": 1295
+      },
+      {
+        "region": "Erope",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Check",
+        "series": "Check",
+        "price": 1295
+      },
+      {
+        "region": "Erope",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "Check",
+        "series": "Check",
+        "price": 1598
+      },
+      {
+        "region": "Erope",
+        "product": "misc",
+        "department": "DTD3",
+        "payment": "Check",
+        "series": "Check",
+        "price": 4796
+      },
+      {
+        "region": "Erope",
+        "product": "AR",
+        "department": "DTDx",
+        "payment": "Check",
+        "series": "Check",
+        "price": 799
+      },
+      {
+        "region": "Erope",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Check",
+        "series": "Check",
+        "price": 799
+      },
+      {
+        "region": "Erope",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Check",
+        "series": "Check",
+        "price": 2990
+      },
+      {
+        "region": "Erope",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "Check",
+        "series": "Check",
+        "price": 8996
+      },
+      {
+        "region": "Erope",
+        "product": "C1",
+        "department": "DTD2",
+        "payment": "Check",
+        "series": "Check",
+        "price": 1995
+      },
+      {
+        "region": "Erope",
+        "product": "C1",
+        "department": "DTD3",
+        "payment": "Check",
+        "series": "Check",
+        "price": 895
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTDx",
+        "payment": "Check",
+        "series": "Check",
+        "price": 795
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Check",
+        "series": "Check",
+        "price": 2893
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Check",
+        "series": "Check",
+        "price": 2889
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "Check",
+        "series": "Check",
+        "price": 1295
+      },
+      {
+        "region": "China",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Check",
+        "series": "Check",
+        "price": 6092
+      },
+      {
+        "region": "China",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "Check",
+        "series": "Check",
+        "price": 4493
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTDx",
+        "payment": "Check",
+        "series": "Check",
+        "price": 5000
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Check",
+        "series": "Check",
+        "price": 2397
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Check",
+        "series": "Check",
+        "price": 3197
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "Check",
+        "series": "Check",
+        "price": 1598
+      },
+      {
+        "region": "China",
+        "product": "C1",
+        "department": "DTDx",
+        "payment": "Check",
+        "series": "Check",
+        "price": 895
+      },
+      {
+        "region": "China",
+        "product": "C1",
+        "department": "DTD1",
+        "payment": "Check",
+        "series": "Check",
+        "price": 895
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTDx",
+        "payment": "Check",
+        "series": "Check",
+        "price": 2893
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Check",
+        "series": "Check",
+        "price": 5979
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Check",
+        "series": "Check",
+        "price": 5979
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "Check",
+        "series": "Check",
+        "price": 3389
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTDx",
+        "payment": "Check",
+        "series": "Check",
+        "price": 3389
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Check",
+        "series": "Check",
+        "price": 7994
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "Check",
+        "series": "Check",
+        "price": 4492
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTD3",
+        "payment": "Check",
+        "series": "Check",
+        "price": 1599
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTDx",
+        "payment": "Check",
+        "series": "Check",
+        "price": 13789
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Check",
+        "series": "Check",
+        "price": 21191
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Check",
+        "series": "Check",
+        "price": 12888
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "Check",
+        "series": "Check",
+        "price": 3997
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTDx",
+        "payment": "Check",
+        "series": "Check",
+        "price": 2890
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTD2",
+        "payment": "Check",
+        "series": "Check",
+        "price": 3285
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTD1",
+        "payment": "Check",
+        "series": "Check",
+        "price": 2685
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTD3",
+        "payment": "Check",
+        "series": "Check",
+        "price": 895
+      },
+      {
+        "region": "Other",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Check",
+        "series": "Check",
+        "price": 1295
+      },
+      {
+        "region": "Other",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Check",
+        "series": "Check",
+        "price": 1295
+      },
+      {
+        "region": "Other",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Check",
+        "series": "Check",
+        "price": 799
+      },
+      {
+        "region": "Other",
+        "product": "AR",
+        "department": "DTDx",
+        "payment": "Check",
+        "series": "Check",
+        "price": 799
+      },
+      {
+        "region": "Other",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Check",
+        "series": "Check",
+        "price": 1495
+      },
+      {
+        "region": "Other",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Check",
+        "series": "Check",
+        "price": 6599
+      },
+      {
+        "region": "United States",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Online",
+        "series": "Online",
+        "price": 2893
+      },
+      {
+        "region": "United States",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Online",
+        "series": "Online",
+        "price": 6774
+      },
+      {
+        "region": "United States",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "Online",
+        "series": "Online",
+        "price": 5975
+      },
+      {
+        "region": "United States",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Online",
+        "series": "Online",
+        "price": 2398
+      },
+      {
+        "region": "United States",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "Online",
+        "series": "Online",
+        "price": 3198
+      },
+      {
+        "region": "United States",
+        "product": "misc",
+        "department": "DTD3",
+        "payment": "Online",
+        "series": "Online",
+        "price": 4493
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTDx",
+        "payment": "Online",
+        "series": "Online",
+        "price": 1495
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Online",
+        "series": "Online",
+        "price": 5491
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Online",
+        "series": "Online",
+        "price": 7398
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "Online",
+        "series": "Online",
+        "price": 3997
+      },
+      {
+        "region": "United States",
+        "product": "C1",
+        "department": "DTD1",
+        "payment": "Online",
+        "series": "Online",
+        "price": 895
+      },
+      {
+        "region": "United States",
+        "product": "C1",
+        "department": "DTD3",
+        "payment": "Online",
+        "series": "Online",
+        "price": 1995
+      },
+      {
+        "region": "Erope",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Online",
+        "series": "Online",
+        "price": 2094
+      },
+      {
+        "region": "Erope",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Online",
+        "series": "Online",
+        "price": 799
+      },
+      {
+        "region": "Erope",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Online",
+        "series": "Online",
+        "price": 1599
+      },
+      {
+        "region": "Erope",
+        "product": "AR",
+        "department": "DTDx",
+        "payment": "Online",
+        "series": "Online",
+        "price": 5000
+      },
+      {
+        "region": "Erope",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Online",
+        "series": "Online",
+        "price": 799
+      },
+      {
+        "region": "Erope",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Online",
+        "series": "Online",
+        "price": 7397
+      },
+      {
+        "region": "Erope",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "Online",
+        "series": "Online",
+        "price": 1495
+      },
+      {
+        "region": "Erope",
+        "product": "C1",
+        "department": "DTD3",
+        "payment": "Online",
+        "series": "Online",
+        "price": 2390
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Online",
+        "series": "Online",
+        "price": 799
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Online",
+        "series": "Online",
+        "price": 1295
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "Online",
+        "series": "Online",
+        "price": 1295
+      },
+      {
+        "region": "China",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Online",
+        "series": "Online",
+        "price": 1295
+      },
+      {
+        "region": "China",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "Online",
+        "series": "Online",
+        "price": 1599
+      },
+      {
+        "region": "China",
+        "product": "misc",
+        "department": "DTD3",
+        "payment": "Online",
+        "series": "Online",
+        "price": 1599
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTDx",
+        "payment": "Online",
+        "series": "Online",
+        "price": 2398
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Online",
+        "series": "Online",
+        "price": 4795
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Online",
+        "series": "Online",
+        "price": 8892
+      },
+      {
+        "region": "China",
+        "product": "C1",
+        "department": "DTD2",
+        "payment": "Online",
+        "series": "Online",
+        "price": 2890
+      },
+      {
+        "region": "China",
+        "product": "C1",
+        "department": "DTD1",
+        "payment": "Online",
+        "series": "Online",
+        "price": 2890
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTDx",
+        "payment": "Online",
+        "series": "Online",
+        "price": 2889
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Online",
+        "series": "Online",
+        "price": 4983
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Online",
+        "series": "Online",
+        "price": 7069
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "Online",
+        "series": "Online",
+        "price": 3389
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Online",
+        "series": "Online",
+        "price": 6396
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "Online",
+        "series": "Online",
+        "price": 3198
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTD3",
+        "payment": "Online",
+        "series": "Online",
+        "price": 7195
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTDx",
+        "payment": "Online",
+        "series": "Online",
+        "price": 16598
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Online",
+        "series": "Online",
+        "price": 7090
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Online",
+        "series": "Online",
+        "price": 15799
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "Online",
+        "series": "Online",
+        "price": 799
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTDx",
+        "payment": "Online",
+        "series": "Online",
+        "price": 4885
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTD2",
+        "payment": "Online",
+        "series": "Online",
+        "price": 7875
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTD1",
+        "payment": "Online",
+        "series": "Online",
+        "price": 5485
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTD3",
+        "payment": "Online",
+        "series": "Online",
+        "price": 2685
+      },
+      {
+        "region": "Other",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Online",
+        "series": "Online",
+        "price": 1295
+      },
+      {
+        "region": "Other",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Online",
+        "series": "Online",
+        "price": 799
+      },
+      {
+        "region": "Other",
+        "product": "C1",
+        "department": "DTD2",
+        "payment": "Online",
+        "series": "Online",
+        "price": 895
+      },
+      {
+        "region": "United States",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 4188
+      },
+      {
+        "region": "United States",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 5180
+      },
+      {
+        "region": "United States",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 9785
+      },
+      {
+        "region": "United States",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 5292
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTDx",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 799
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 13197
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 5000
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 2294
+      },
+      {
+        "region": "United States",
+        "product": "C1",
+        "department": "DTD2",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 4385
+      },
+      {
+        "region": "United States",
+        "product": "C1",
+        "department": "DTD3",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 895
+      },
+      {
+        "region": "Erope",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 799
+      },
+      {
+        "region": "Erope",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 799
+      },
+      {
+        "region": "Erope",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 1295
+      },
+      {
+        "region": "Erope",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 1599
+      },
+      {
+        "region": "Erope",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 5000
+      },
+      {
+        "region": "Erope",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 799
+      },
+      {
+        "region": "Erope",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 799
+      },
+      {
+        "region": "Erope",
+        "product": "C1",
+        "department": "DTD1",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 895
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 2590
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 799
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 1295
+      },
+      {
+        "region": "China",
+        "product": "misc",
+        "department": "DTDx",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 1599
+      },
+      {
+        "region": "China",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 2894
+      },
+      {
+        "region": "China",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 1295
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 2990
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 3094
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 1495
+      },
+      {
+        "region": "China",
+        "product": "C1",
+        "department": "DTD1",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 895
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTDx",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 799
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 7270
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 6778
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 2885
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTDx",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 1599
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 2398
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 2398
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTDx",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 3094
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 2294
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 22194
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 6598
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTDx",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 895
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTD2",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 2890
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTD3",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 3785
+      },
+      {
+        "region": "Other",
+        "product": "SP",
+        "department": "DTDx",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 795
+      },
+      {
+        "region": "Other",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 1599
+      },
+      {
+        "region": "Other",
+        "product": "C1",
+        "department": "DTD3",
+        "payment": "Cash",
+        "series": "Cash",
+        "price": 1995
+      },
+      {
+        "region": "United States",
+        "product": "SP",
+        "department": "DTDx",
+        "payment": "Other",
+        "series": "Other",
+        "price": 1295
+      },
+      {
+        "region": "United States",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Other",
+        "series": "Other",
+        "price": 1295
+      },
+      {
+        "region": "United States",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Other",
+        "series": "Other",
+        "price": 3389
+      },
+      {
+        "region": "United States",
+        "product": "misc",
+        "department": "DTDx",
+        "payment": "Other",
+        "series": "Other",
+        "price": 1599
+      },
+      {
+        "region": "United States",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "Other",
+        "series": "Other",
+        "price": 1599
+      },
+      {
+        "region": "United States",
+        "product": "misc",
+        "department": "DTD3",
+        "payment": "Other",
+        "series": "Other",
+        "price": 2094
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Other",
+        "series": "Other",
+        "price": 4796
+      },
+      {
+        "region": "United States",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Other",
+        "series": "Other",
+        "price": 8893
+      },
+      {
+        "region": "United States",
+        "product": "C1",
+        "department": "DTD2",
+        "payment": "Other",
+        "series": "Other",
+        "price": 895
+      },
+      {
+        "region": "United States",
+        "product": "C1",
+        "department": "DTD1",
+        "payment": "Other",
+        "series": "Other",
+        "price": 2685
+      },
+      {
+        "region": "United States",
+        "product": "C1",
+        "department": "DTD3",
+        "payment": "Other",
+        "series": "Other",
+        "price": 895
+      },
+      {
+        "region": "Erope",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Other",
+        "series": "Other",
+        "price": 1295
+      },
+      {
+        "region": "Erope",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "Other",
+        "series": "Other",
+        "price": 1295
+      },
+      {
+        "region": "Erope",
+        "product": "misc",
+        "department": "DTDx",
+        "payment": "Other",
+        "series": "Other",
+        "price": 1599
+      },
+      {
+        "region": "Erope",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "Other",
+        "series": "Other",
+        "price": 799
+      },
+      {
+        "region": "Erope",
+        "product": "C1",
+        "department": "DTD1",
+        "payment": "Other",
+        "series": "Other",
+        "price": 1495
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTDx",
+        "payment": "Other",
+        "series": "Other",
+        "price": 799
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Other",
+        "series": "Other",
+        "price": 5479
+      },
+      {
+        "region": "China",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "Other",
+        "series": "Other",
+        "price": 3385
+      },
+      {
+        "region": "China",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Other",
+        "series": "Other",
+        "price": 1599
+      },
+      {
+        "region": "China",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "Other",
+        "series": "Other",
+        "price": 799
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Other",
+        "series": "Other",
+        "price": 2990
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Other",
+        "series": "Other",
+        "price": 4692
+      },
+      {
+        "region": "China",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "Other",
+        "series": "Other",
+        "price": 5000
+      },
+      {
+        "region": "China",
+        "product": "C1",
+        "department": "DTD2",
+        "payment": "Other",
+        "series": "Other",
+        "price": 3990
+      },
+      {
+        "region": "China",
+        "product": "C1",
+        "department": "DTD3",
+        "payment": "Other",
+        "series": "Other",
+        "price": 1995
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTDx",
+        "payment": "Other",
+        "series": "Other",
+        "price": 1594
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTD2",
+        "payment": "Other",
+        "series": "Other",
+        "price": 7864
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTD1",
+        "payment": "Other",
+        "series": "Other",
+        "price": 3389
+      },
+      {
+        "region": "Japan",
+        "product": "SP",
+        "department": "DTD3",
+        "payment": "Other",
+        "series": "Other",
+        "price": 4184
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Other",
+        "series": "Other",
+        "price": 3693
+      },
+      {
+        "region": "Japan",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "Other",
+        "series": "Other",
+        "price": 6092
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTDx",
+        "payment": "Other",
+        "series": "Other",
+        "price": 6599
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Other",
+        "series": "Other",
+        "price": 3198
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Other",
+        "series": "Other",
+        "price": 13997
+      },
+      {
+        "region": "Japan",
+        "product": "AR",
+        "department": "DTD3",
+        "payment": "Other",
+        "series": "Other",
+        "price": 8093
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTD2",
+        "payment": "Other",
+        "series": "Other",
+        "price": 9270
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTD1",
+        "payment": "Other",
+        "series": "Other",
+        "price": 1495
+      },
+      {
+        "region": "Japan",
+        "product": "C1",
+        "department": "DTD3",
+        "payment": "Other",
+        "series": "Other",
+        "price": 895
+      },
+      {
+        "region": "Other",
+        "product": "misc",
+        "department": "DTD2",
+        "payment": "Other",
+        "series": "Other",
+        "price": 799
+      },
+      {
+        "region": "Other",
+        "product": "misc",
+        "department": "DTD1",
+        "payment": "Other",
+        "series": "Other",
+        "price": 1599
+      },
+      {
+        "region": "Other",
+        "product": "AR",
+        "department": "DTD2",
+        "payment": "Other",
+        "series": "Other",
+        "price": 4693
+      },
+      {
+        "region": "Other",
+        "product": "AR",
+        "department": "DTD1",
+        "payment": "Other",
+        "series": "Other",
+        "price": 799
+      }
+    ]
+  }
+}

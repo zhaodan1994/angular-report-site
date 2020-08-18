@@ -1,0 +1,17 @@
+<header>
+    <mat-toolbar>
+        <button mat-icon-button (click)="toggle()" *ngIf="hasSideBar">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <button class="projectName" mat-button routerLinkActive="mat-button-active" routerLink="overview">
+           <img alt="dv" class="logo" src="../assets/dv.png"> GRAPECITY DV
+        </button>
+        <button mat-button routerLinkActive="mat-button-active" routerLink="documentation">DOCUMENTATION</button>
+        <button mat-button routerLinkActive="mat-button-active" routerLink="samples">SAMPLES</button>
+        <button mat-button routerLinkActive="mat-button-active" routerLink="testing">TESTING</button>
+        <button mat-button routerLinkActive="mat-button-active" routerLink="userstories">USER STORIES</button>
+    </mat-toolbar>
+</header>
+<main>
+    <router-outlet></router-outlet>
+</main>

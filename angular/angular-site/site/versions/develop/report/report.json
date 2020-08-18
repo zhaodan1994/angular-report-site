@@ -1,0 +1,55 @@
+{
+    "canvas":[
+        {
+            "start" : "2020-06-01-13-24-12",
+            "duration" : "1h35min",
+            "end" : "2020-06-01(11:23:00)",
+            "testResult" : {
+                "success" : 10000,
+                "failed" : 9000,
+                "closed" : 100,
+                "new" : 200
+            }
+        },
+        {
+            "date" : "2020-06-02-13-24-12",
+            "duration" : "1h35min",
+            "started" : "2020-06-02(09:23:10)",
+            "testResult" : {
+                "success" : 10000,
+                "failed" : 9000,
+                "closed" : 100,
+                "new" : 200
+            }
+        }
+
+    ],
+    "svg":[
+        {
+            "date" : "2020-06-03-13-24-12",
+            "duration" : "8h35min",
+            "started" : "2020-06-03(11:23:00)",
+            "testResult" : {
+                "success" : 10000,
+                "failed" : 9000,
+                "closed" : 100,
+                "new" : 200
+            }
+        },
+        {
+            "date" : "2020-06-04-19-24-12",
+            "duration" : "4h35min",
+            "started" : "2020-06-04(09:23:10)",
+            "testResult" : {
+                "success" : 10000,
+                "failed" : 9000,
+                "closed" : 100,
+                "new" : 200
+            }
+        }
+
+    ]
+    
+   
+
+}
