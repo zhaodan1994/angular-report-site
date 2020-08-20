@@ -11,7 +11,13 @@ declare namespace dv {
 
     class FlexDV extends Control {
         renderMethod: RenderMethod;
+        hitTested: HitTestEvent;
+        rendered: HitTestEvent;
         constructor(element: any);
         load(option: any): void;
+    }
+    class HitTestEvent {
+        addHandler(handler: any, self?: any): void
+
     }
 }

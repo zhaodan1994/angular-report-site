@@ -4,7 +4,7 @@ import { DynamicVersionLoaderService } from 'share-services/services/dynamic-ver
 import { PlotService } from '../../services/plot/plot.service';
 
 
-declare var dv: any;
+
 
 @Component({
   selector: 'app-plot-viewer',
@@ -44,7 +44,7 @@ export class PlotViewerComponent implements OnInit {
     this.isLoaded.emit(true);
     if (fullModel && !this.waiting) {
       this.waiting = true;
-      let chart = dv.Control.getControl(this.element.nativeElement);
+      let chart: dv.FlexDV = dv.Control.getControl(this.element.nativeElement) as dv.FlexDV;
       if (chart == null) {
         chart = new dv.FlexDV(this.element.nativeElement);
       }
