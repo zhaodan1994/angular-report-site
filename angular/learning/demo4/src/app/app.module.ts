@@ -16,8 +16,11 @@ import { ChartLineModule } from 'src/modules/line/chart-line.module';
 import { ChartBarModule } from 'src/modules/bar/chart-bar.module';
 import { DemoComponent1Component } from './components/demo-component1/demo-component1.component';
 import { DemoProvidersComponent } from './components/demo-providers/demo-providers.component';
-import { ChartModule } from 'src/modules/chart/chart.module';
 import { DemoRenderer2Component } from './components/demo-renderer2/demo-renderer2.component';
+import { DemoNgTemplateComponent } from './components/demo-ng-template/demo-ng-template.component';
+
+
+import { GreetComponent } from './components/greet/greet.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { DemoRenderer2Component } from './components/demo-renderer2/demo-rendere
     DemoProvideInComponent,
     DemoComponent1Component,
     DemoProvidersComponent,
-    DemoRenderer2Component
+    DemoRenderer2Component,
+    DemoNgTemplateComponent,
+    GreetComponent
   ],
   imports: [
     BrowserModule,

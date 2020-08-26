@@ -12,6 +12,7 @@ import { DemoProvidersComponent } from './components/demo-providers/demo-provide
 import { PlotBarComponent } from 'src/modules/bar/components/plot-bar/plot-bar.component';
 import { PlotLineComponent } from 'src/modules/line/components/plot-line/plot-line.component';
 import { DemoRenderer2Component } from './components/demo-renderer2/demo-renderer2.component';
+import { DemoNgTemplateComponent } from './components/demo-ng-template/demo-ng-template.component';
 
 
 const routes: Routes = [
@@ -39,7 +40,9 @@ const routes: Routes = [
   {
     path: 'demo-renderer2', component: DemoRenderer2Component
   },
-
+  {
+    path: 'demo-ng-template', component: DemoNgTemplateComponent
+  },
   {
     path: 'module-lazy',
     loadChildren: () => import('../modules/lazy/lazy.module') .then(m => m.LazyModule),
