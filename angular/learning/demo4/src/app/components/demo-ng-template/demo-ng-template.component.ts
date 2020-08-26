@@ -22,7 +22,7 @@ export class DemoNgTemplateComponent implements OnInit, OnDestroy {
 
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
-    public cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef
   ) { }
 
   name = 'User';
@@ -49,6 +49,7 @@ export class DemoNgTemplateComponent implements OnInit, OnDestroy {
     this.greetComponentRef.instance.changeEvent.subscribe((value: string) => {
       this.name = value;
     });
+  
   }
 
   createComponentInOtherModule(): void {
@@ -64,6 +65,9 @@ export class DemoNgTemplateComponent implements OnInit, OnDestroy {
 
   changeName() {
     this.name = 'User5';
+    // this.greetComponentRef.instance.name = 'User5';
+    // this.dynamicComponentRef.instance.name = 'User5';
+
   }
 
 
