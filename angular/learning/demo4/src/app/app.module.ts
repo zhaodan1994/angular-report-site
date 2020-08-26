@@ -17,6 +17,7 @@ import { ChartBarModule } from 'src/modules/bar/chart-bar.module';
 import { DemoComponent1Component } from './components/demo-component1/demo-component1.component';
 import { DemoProvidersComponent } from './components/demo-providers/demo-providers.component';
 import { ChartModule } from 'src/modules/chart/chart.module';
+import { DemoRenderer2Component } from './components/demo-renderer2/demo-renderer2.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ChartModule } from 'src/modules/chart/chart.module';
     DemoComponent3Component,
     DemoProvideInComponent,
     DemoComponent1Component,
-    DemoProvidersComponent
+    DemoProvidersComponent,
+    DemoRenderer2Component
   ],
   imports: [
     BrowserModule,
