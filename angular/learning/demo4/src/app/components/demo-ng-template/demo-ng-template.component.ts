@@ -1,5 +1,5 @@
-import { ViewContainerRef, ComponentFactoryResolver, ComponentRef, OnDestroy } from '@angular/core';
-import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { ViewContainerRef,  ComponentRef, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef, ComponentFactoryResolver } from '@angular/core';
 import { GreetComponent } from '../greet/greet.component';
 
 
@@ -16,7 +16,8 @@ export class DemoNgTemplateComponent implements OnInit, OnDestroy {
   @ViewChild('dialogContainer', { read: ViewContainerRef, static: true }) dialogContainer: ViewContainerRef;
   @ViewChild('greetContainer', { read: ViewContainerRef, static: true }) greetContainer: ViewContainerRef;
   constructor(
-    private componentFactoryResolver: ComponentFactoryResolver
+    private componentFactoryResolver: ComponentFactoryResolver,
+    public cd: ChangeDetectorRef
   ) { }
 
   name = 'User1';
@@ -24,7 +25,6 @@ export class DemoNgTemplateComponent implements OnInit, OnDestroy {
     this.createDialog();
     this.createComponent();
   }
-
 
 
 
@@ -42,11 +42,17 @@ export class DemoNgTemplateComponent implements OnInit, OnDestroy {
     });
   }
 
+  changeName() {
+    this.name = 'User3';
+  }
+
+
  ngOnDestroy(): void {
    if (this.componentRef) {
      this.componentRef.destroy();
    }
 
  }
+
 
 }

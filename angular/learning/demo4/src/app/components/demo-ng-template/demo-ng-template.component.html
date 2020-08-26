@@ -1,5 +1,6 @@
 <p>demo-ng-template works!</p>
 <p>The current name is : {{name}}</p>
+<button (click)="changeName()">ChangeName</button>
 
 <ng-template #dialogTemplate>   
     <div class="dialog" mat-dialog-content>
@@ -12,3 +13,5 @@
 <ng-template #dialogContainer></ng-template>
 
 <ng-template #greetContainer></ng-template>
+
+<app-customer [name]= "name" ></app-customer>

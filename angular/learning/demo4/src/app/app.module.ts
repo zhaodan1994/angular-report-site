@@ -21,6 +21,7 @@ import { DemoNgTemplateComponent } from './components/demo-ng-template/demo-ng-t
 
 
 import { GreetComponent } from './components/greet/greet.component';
+import { CustomerComponent } from './components/customer/customer.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { GreetComponent } from './components/greet/greet.component';
     DemoProvidersComponent,
     DemoRenderer2Component,
     DemoNgTemplateComponent,
-    GreetComponent
+    GreetComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
