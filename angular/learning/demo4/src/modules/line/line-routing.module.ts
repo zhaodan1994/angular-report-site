@@ -5,11 +5,12 @@ import { PlotLineComponent } from './components/plot-line/plot-line.component';
 
 
 const routes: Routes = [
-  {
-    path: '', component: ChartLineComponent
-  },
+
   {
     path: 'plot', component: PlotLineComponent
+  },
+  {
+    path: '', component: ChartLineComponent
   }
 ];
 

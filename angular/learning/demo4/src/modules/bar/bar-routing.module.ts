@@ -5,11 +5,12 @@ import { PlotBarComponent } from './components/plot-bar/plot-bar.component';
 
 
 const routes: Routes = [
-  {
-    path: '', component: ChartBarComponent
-  },
+
   {
     path: 'plot', component: PlotBarComponent
+  },
+  {
+    path: '', component: ChartBarComponent
   }
 ];
 

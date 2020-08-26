@@ -16,7 +16,8 @@ export class GreetComponent implements OnInit, AfterViewInit {
   }
 
   changeName() {
-    this.changeEvent.emit('User2');
+    this.name = 'User10';
+    this.changeEvent.emit('User10');
   }
 
   ngAfterViewInit(): void {

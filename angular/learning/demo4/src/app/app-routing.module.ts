@@ -47,14 +47,16 @@ const routes: Routes = [
     path: 'module-lazy',
     loadChildren: () => import('../modules/lazy/lazy.module') .then(m => m.LazyModule),
   },
+
+  {
+    path: 'module-line',
+    loadChildren: () => import('../modules/line/chart-line.module') .then(m => m.ChartLineModule),
+  },
   {
     path: 'module-bar',
     loadChildren: () => import('../modules/bar/chart-bar.module') .then(m => m.ChartBarModule),
   },
-  {
-    path: 'module-line',
-    loadChildren: () => import('../modules/line/chart-line.module') .then(m => m.ChartLineModule),
-  }
+  { path: '', redirectTo: 'demo', pathMatch: 'full' }
 ];
 
 @NgModule({

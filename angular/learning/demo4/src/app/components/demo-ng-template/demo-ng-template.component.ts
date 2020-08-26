@@ -1,6 +1,8 @@
-import { ViewContainerRef,  ComponentRef, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { ViewContainerRef,  ComponentRef, OnDestroy, ChangeDetectorRef, ComponentFactory } from '@angular/core';
 import { Component, OnInit, ViewChild, TemplateRef, ComponentFactoryResolver } from '@angular/core';
 import { GreetComponent } from '../greet/greet.component';
+import { DynamicComponent } from 'src/modules/data/components/dynamic/dynamic.component';
+
 
 
 @Component({
@@ -10,20 +12,27 @@ import { GreetComponent } from '../greet/greet.component';
 })
 export class DemoNgTemplateComponent implements OnInit, OnDestroy {
 
-  componentRef: ComponentRef<GreetComponent>;
+  greetComponentRef: ComponentRef<GreetComponent>;
+  dynamicComponentRef: ComponentRef<DynamicComponent>;
 
   @ViewChild('dialogTemplate', {static: true}) customDialog: TemplateRef<any>;
   @ViewChild('dialogContainer', { read: ViewContainerRef, static: true }) dialogContainer: ViewContainerRef;
   @ViewChild('greetContainer', { read: ViewContainerRef, static: true }) greetContainer: ViewContainerRef;
+  @ViewChild('dynamicContainer', { read: ViewContainerRef, static: true }) dynamicContainer: ViewContainerRef;
+
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
     public cd: ChangeDetectorRef
   ) { }
 
-  name = 'User1';
+  name = 'User';
+  currentIndex = 1;
+  interval: any;
   ngOnInit(): void {
     this.createDialog();
-    this.createComponent();
+    this.createComponentInCurrentModule();
+    this.createComponentInOtherModule();
+    // this.createMultipleComponent();
   }
 
 
@@ -32,25 +41,51 @@ export class DemoNgTemplateComponent implements OnInit, OnDestroy {
     this.dialogContainer.createEmbeddedView(this.customDialog);
   }
 
-  createComponent(): void {
+  createComponentInCurrentModule(): void {
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(GreetComponent);
     this.greetContainer.clear();
-    this.componentRef = this.greetContainer.createComponent(componentFactory);
-    this.componentRef.instance.name = this.name;
-    this.componentRef.instance.changeEvent.subscribe((value: string) => {
+    this.greetComponentRef = this.greetContainer.createComponent(componentFactory);
+    this.greetComponentRef.instance.name = this.name + this.currentIndex;
+    this.greetComponentRef.instance.changeEvent.subscribe((value: string) => {
       this.name = value;
     });
   }
 
-  changeName() {
-    this.name = 'User3';
+  createComponentInOtherModule(): void {
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(DynamicComponent);
+    this.dynamicContainer.clear();
+    this.dynamicComponentRef = this.greetContainer.createComponent(componentFactory);
+    this.dynamicComponentRef.instance.name = this.name + this.currentIndex;
+    this.dynamicComponentRef.instance.changeEvent.subscribe((value: string) => {
+      this.name = value;
+    });
   }
 
 
+  changeName() {
+    this.name = 'User5';
+  }
+
+
+  createMultipleComponent() {
+    this.createComponentInCurrentModule();
+    this.interval = setInterval(() => {
+      this.currentIndex ++;
+      this.createComponentInCurrentModule();
+      if (this.currentIndex === 4) {
+        clearInterval(this.interval);
+      }
+    }, 1500);
+  }
+
  ngOnDestroy(): void {
-   if (this.componentRef) {
-     this.componentRef.destroy();
+   if (this.greetComponentRef) {
+     this.greetComponentRef.destroy();
    }
+
+   if (this.dynamicComponentRef) {
+    this.dynamicComponentRef.destroy();
+  }
 
  }
 
