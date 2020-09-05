@@ -4,15 +4,16 @@ import { ChartModule } from '../chart/chart.module';
 import { PlotBarComponent } from './components/plot-bar/plot-bar.component';
 import { ChartBarComponent } from './components/chart-bar/chart-bar.component';
 import { BarRoutingModule } from './bar-routing.module';
+import { BarComponent } from './components/bar/bar.component';
 
 
 
 @NgModule({
-  declarations: [ChartBarComponent, PlotBarComponent],
+  declarations: [ChartBarComponent, PlotBarComponent, BarComponent],
   imports: [
     CommonModule,
-    ChartModule,
-    BarRoutingModule
+    BarRoutingModule,
+    ChartModule
   ],
   exports: [
     ChartBarComponent,

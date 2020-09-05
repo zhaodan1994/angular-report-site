@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from 'src/modules/chart/service/common/common.service';
+import { ChartService } from 'src/modules/chart/service/chart/chart.service';
 
 @Component({
   selector: 'app-demo-list',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoListComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private commonService: CommonService,
+    private chartService: ChartService
+  ) { }
 
   ngOnInit(): void {
   }

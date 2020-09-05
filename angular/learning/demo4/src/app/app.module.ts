@@ -22,6 +22,13 @@ import { DemoNgTemplateComponent } from './components/demo-ng-template/demo-ng-t
 
 import { GreetComponent } from './components/greet/greet.component';
 import { CustomerComponent } from './components/customer/customer.component';
+import { PlotModule } from 'src/modules/plot/plot.module';
+import { ChartBarComponent } from 'src/modules/bar/components/chart-bar/chart-bar.component';
+import { PlotService } from 'src/modules/chart/service/plot/plot.service';
+import { ChartService } from 'src/modules/chart/service/chart/chart.service';
+import { LazyModule } from 'src/modules/lazy/lazy.module';
+import { ChartModule } from 'src/modules/chart/chart.module';
+import { CommonService } from 'src/modules/chart/service/common/common.service';
 
 @NgModule({
   declarations: [
@@ -45,10 +52,13 @@ import { CustomerComponent } from './components/customer/customer.component';
     BrowserModule,
     AppRoutingModule,
     DataModule,
-    ChartBarModule,
-    ChartLineModule
+    ChartModule.forRoot()
+
   ],
-  providers: [],
+  providers: [
+    // ChartService, PlotService
+    // CommonService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

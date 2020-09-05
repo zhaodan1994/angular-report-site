@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LazyService } from 'src/modules/lazy/service/lazy.service';
+import { ChartService } from 'src/modules/chart/service/chart/chart.service';
+import { PlotService } from 'src/modules/chart/service/plot/plot.service';
 
 @Component({
   selector: 'app-data',
@@ -9,22 +11,34 @@ import { LazyService } from 'src/modules/lazy/service/lazy.service';
 export class DataComponent implements OnInit {
 
   constructor(
-    private lazyService: LazyService
+    private chartService: ChartService,
+    private plotService: PlotService
   ) { }
 
-  data: string;
+  chartData: string;
+  plotData: string;
 
   ngOnInit(): void {
-    this.getData();
+    this.getChartData();
+    this.getPlotData();
   }
 
-  changeData(): void {
-    this.data = 'change the lazy data in the lazy service from data module';
-    this.lazyService.setLazyData(this.data);
+  changeChartData(): void {
+    this.chartData = 'change the chart-service from data module';
+    this.chartService.setChart(this.chartData);
   }
 
-  getData(): void {
-    this.data = this.lazyService.loadLazy();
+  changePlotData(): void {
+    this.plotData = 'change the plot-service from data module';
+    this.plotService.setChart(this.plotData);
+  }
+
+  getChartData(): void {
+    this.chartData = this.chartService.loadChart();
+  }
+
+  getPlotData(): void {
+    this.plotData = this.plotService.loadChart();
   }
 
 }

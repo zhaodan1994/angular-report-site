@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
+import { LazyModule } from '../lazy.module';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: LazyModule
 })
 export class LazyService {
 
-  static count = 0;
   constructor() {
-    console.log('create service ' + LazyService.count++);
+    console.log('create lazy service ');
   }
 
   lazyData = 'this is a property from lazy service';

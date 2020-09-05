@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
+import {ModuleWithProviders,  NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PlotService } from './service/plot/plot.service';
 import { ChartComponent } from './components/chart/chart.component';
+import { ChartService } from './service/chart/chart.service';
+import { CommonService } from './service/common/common.service';
 
 
 
@@ -10,9 +11,18 @@ import { ChartComponent } from './components/chart/chart.component';
   imports: [
     CommonModule
   ],
-  exports: [
-    ChartComponent
-  ],
-  providers: [ PlotService ]
+  providers: [
+    ChartService
+  ]
 })
-export class ChartModule { }
+export class ChartModule {
+  static forRoot(): ModuleWithProviders<ChartModule> {
+    return {
+      ngModule: ChartModule,
+      providers: [
+       CommonService
+      ]
+    };
+  }
+
+ }

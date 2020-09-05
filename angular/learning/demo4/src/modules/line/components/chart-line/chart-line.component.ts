@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlotService } from 'src/modules/chart/service/plot/plot.service';
 import { ChartService } from 'src/modules/chart/service/chart/chart.service';
 
 @Component({
@@ -18,7 +19,7 @@ export class ChartLineComponent implements OnInit {
   }
 
   changeData(): void {
-    this.data = 'chart-line module';
+    this.data = 'component2 in chart-line module';
     this.chartService.setChart(this.data);
   }
 

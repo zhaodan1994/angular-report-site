@@ -1,8 +1,21 @@
-<div>
+<div class="data">
     <p>其他特性模块</p>
-    <p>{{data}}</p>
-    <button (click) = "changeData()"> Change Data In DataModule</button>
-    <button (click) = "getData()"> Get new Data In the DataModule</button>
+
+    <div class="chart">
+        <p>data works!</p> 
+        <button (click) = "changeChartData()"> Change chartData In DataModule</button>   
+        <p>{{chartData}}</p>
+        <button (click) = "getChartData()"> Get new chartData In the DataModule</button>
+    </div>
+    
+    <div class="plot">  
+        <p>data works!</p>  
+        <button (click) = "changePlotData()"> Change plotData In DataModule</button> 
+        <p>{{plotData}}</p>
+        <button (click) = "getPlotData()"> Get new plotData In the DataModule</button>
+    </div>
 </div>
+
+
 
 

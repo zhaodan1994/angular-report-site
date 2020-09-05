@@ -5,12 +5,8 @@ import { DemoListComponent } from './components/demo-list/demo-list.component';
 import { DemoServiceComponent } from './components/demo-service/demo-service.component';
 import { DemoLazyComponent } from './components/demo-lazy/demo-lazy.component';
 import { DemoComponentComponent } from './components/demo-component/demo-component.component';
-import { DemoComponent2Component } from './components/demo-component2/demo-component2.component';
-import { DemoComponent3Component } from './components/demo-component3/demo-component3.component';
 import { DemoProvideInComponent } from './components/demo-provide-in/demo-provide-in.component';
 import { DemoProvidersComponent } from './components/demo-providers/demo-providers.component';
-import { PlotBarComponent } from 'src/modules/bar/components/plot-bar/plot-bar.component';
-import { PlotLineComponent } from 'src/modules/line/components/plot-line/plot-line.component';
 import { DemoRenderer2Component } from './components/demo-renderer2/demo-renderer2.component';
 import { DemoNgTemplateComponent } from './components/demo-ng-template/demo-ng-template.component';
 
@@ -55,6 +51,11 @@ const routes: Routes = [
   {
     path: 'module-bar',
     loadChildren: () => import('../modules/bar/chart-bar.module') .then(m => m.ChartBarModule),
+  },
+
+  {
+    path: 'module-plot',
+    loadChildren: () => import('../modules/plot/plot.module') .then(m => m.PlotModule),
   },
   { path: '', redirectTo: 'demo', pathMatch: 'full' }
 ];

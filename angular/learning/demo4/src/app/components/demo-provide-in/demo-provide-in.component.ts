@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlotService } from 'src/modules/chart/service/plot/plot.service';
 
 @Component({
   selector: 'app-demo-provide-in',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoProvideInComponent implements OnInit {
 
-  constructor() { }
+  data: string;
+  constructor(
+    private plotService: PlotService
+  ) { }
 
   ngOnInit(): void {
+    this.getData();
+  }
+
+  changeData(): void {
+    this.data = 'component in App module';
+    this.plotService.setChart(this.data);
+  }
+
+  getData(): void {
+    this.data = this.plotService.loadChart();
   }
 
 }

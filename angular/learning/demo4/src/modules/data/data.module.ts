@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataComponent } from './components/data/data.component';
 import { DynamicComponent } from './components/dynamic/dynamic.component';
+import { ChartModule } from '../chart/chart.module';
 
 
 
@@ -12,7 +13,8 @@ import { DynamicComponent } from './components/dynamic/dynamic.component';
     DynamicComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ChartModule
   ],
   exports: [
    DataComponent

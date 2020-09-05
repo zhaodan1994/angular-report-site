@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { ChartModule } from '../../chart.module';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
+@Injectable({
+  providedIn: ChartModule
+})
 export class PlotService {
 
-  data = 'chart module';
+  data = 'plot service loaded';
 
   constructor() {
     console.log('create plotService');

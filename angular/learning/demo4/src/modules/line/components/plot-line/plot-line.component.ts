@@ -18,7 +18,7 @@ export class PlotLineComponent implements OnInit {
   }
 
   changeData(): void {
-    this.data = 'chart-line module';
+    this.data = 'component1 in chart-line module';
     this.plotService.setChart(this.data);
   }
 

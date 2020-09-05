@@ -18,7 +18,7 @@ export class ChartBarComponent implements OnInit {
   }
 
   changeData(): void {
-    this.data = 'chart-bar module';
+    this.data = 'component1 in chart-bar module';
     this.chartService.setChart(this.data);
   }
 

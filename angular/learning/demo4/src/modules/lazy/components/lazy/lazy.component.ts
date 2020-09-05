@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LazyService } from '../../service/lazy.service';
+import { CommonService } from 'src/modules/chart/service/common/common.service';
+import { ChartService } from 'src/modules/chart/service/chart/chart.service';
 
 @Component({
   selector: 'app-lazy',
@@ -9,21 +11,23 @@ import { LazyService } from '../../service/lazy.service';
 export class LazyComponent implements OnInit {
 
   constructor(
-    private lazyService: LazyService
+   // private lazyService: LazyService,
+   private commonService: CommonService,
+   private chartService: ChartService
   ) { }
 
   data: string;
 
   ngOnInit(): void {
-    this.getData();
+    // this.getData();
   }
 
-  changeData(): void {
-    this.data = 'change the lazy data in the lazy service from lazy module';
-    this.lazyService.setLazyData(this.data);
-  }
+  // changeData(): void {
+  //   this.data = 'change the lazy data in the lazy service from lazy module';
+  //   this.lazyService.setLazyData(this.data);
+  // }
 
-  getData(): void {
-    this.data = this.lazyService.loadLazy();
-  }
+  // getData(): void {
+  //   this.data = this.lazyService.loadLazy();
+  // }
 }
