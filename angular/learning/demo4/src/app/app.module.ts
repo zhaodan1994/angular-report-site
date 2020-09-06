@@ -24,6 +24,7 @@ import { ChartModule } from 'src/modules/chart/chart.module';
 import { DemoTemplatePropertyComponent } from './components/demo-template-property/demo-template-property.component';
 import { DemoParentComponent } from './components/demo-parent/demo-parent.component';
 import { DemoChildComponent } from './components/demo-child/demo-child.component';
+import { SizeComponent } from './components/size/size.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { DemoChildComponent } from './components/demo-child/demo-child.component
     CustomerComponent,
     DemoTemplatePropertyComponent,
     DemoParentComponent,
-    DemoChildComponent
+    DemoChildComponent,
+    SizeComponent
   ],
   imports: [
     BrowserModule,

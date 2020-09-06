@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-demo-parent',
@@ -38,6 +38,16 @@ export class DemoParentComponent implements OnInit {
     class2: false,
     class3: true
   };
+  widthString = '200px';
+  widthNumber = 200;
+  styleObject = {
+    width: '400px',
+    color: 'red',
+    height: '100px',
+    'margin-bottom': '20px'
+  };
+  styleString = 'width:400px; height: 100px; color: blue; margin-bottom: 20px';
+  fontSize = 15;
 
   ngOnInit(): void {
   }

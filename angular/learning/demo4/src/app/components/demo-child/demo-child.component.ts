@@ -50,4 +50,6 @@ export class DemoChildComponent implements OnInit {
     this.count ++;
   }
 
+
+
 }

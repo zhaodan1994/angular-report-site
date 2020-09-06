@@ -38,9 +38,14 @@
 
     <hr><h2>样式绑定</h2>
     <h3>单一的样式绑定</h3>
-    <p></p>
+    <div class="border" [style.width]="widthString">绑定的width is {{widthString}}</div>
     <h3>带单位的单一样式绑定</h3>
+    <div class="border" [style.width.px]="widthNumber">绑定的width is {{widthNumber}}</div>
+
     <h3>多个样式绑定</h3>
+    <div class="border" [style]="styleObject">绑定的style object is <p>{{styleObject | json}}</p> </div>
+    <div class="border" [style]="styleString">绑定的style string is <p>{{styleString}}</p></div>
+
 
     <hr><h2>事件绑定</h2>
     <button (click)="changeComponentProperty()">获取新的组件属性值</button>
@@ -74,6 +79,7 @@
     <input #box2
     (blur)="update(box2.value)">
     <p>{{blurValue}}</p>
+
     
     <hr><h2>父子组件传值</h2>
     <p>父组件中 所有 UserNames 如下：</p>
@@ -84,6 +90,11 @@
     <app-demo-child [userName]="userNames[0]" (deleteUserName)="deleteUserName($event)"></app-demo-child>
     
    
+    <hr><h2>数据的双向绑定</h2>
+    <p [style.fontSize.px]="fontSize">The Text FontSize is {{fontSize}}px</p>
+    <app-size [(size)]="fontSize"></app-size>
+    <app-size [size]="fontSize" (sizeChange)="fontSize = $event"></app-size>
+
 
     <hr><h2>结构型指令</h2>
     <p>结构型指令->通过添加，移除，替换DOM元素来修改布局</p>
