@@ -9,6 +9,8 @@ import { DemoProvideInComponent } from './components/demo-provide-in/demo-provid
 import { DemoProvidersComponent } from './components/demo-providers/demo-providers.component';
 import { DemoRenderer2Component } from './components/demo-renderer2/demo-renderer2.component';
 import { DemoNgTemplateComponent } from './components/demo-ng-template/demo-ng-template.component';
+import { DemoTemplatePropertyComponent } from './components/demo-template-property/demo-template-property.component';
+import { DemoParentComponent } from './components/demo-parent/demo-parent.component';
 
 
 const routes: Routes = [
@@ -38,6 +40,12 @@ const routes: Routes = [
   },
   {
     path: 'demo-ng-template', component: DemoNgTemplateComponent
+  },
+  {
+    path: 'demo-template-property', component: DemoTemplatePropertyComponent
+  },
+  {
+    path: 'demo-parent', component: DemoParentComponent
   },
   {
     path: 'module-lazy',

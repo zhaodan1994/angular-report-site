@@ -1,0 +1,101 @@
+<div class="template">
+    <h1>模板语法</h1>
+
+    <hr><h2>插值绑定</h2>
+    
+    <p>My name is {{personInfo.name}}</p>
+    <p>My age is {{personInfo.age > 18 ? "greater than 18" : "less than 18"}}</p>
+    
+    <h3>
+      {{title}}
+      <img src="{{imageUrl}}" style="height:50px">
+    </h3>
+    
+    <hr><h2>属性值 Property绑定</h2>
+    <p>Angular 中常规的绑定语法针对的都是Property ，
+        因为Property是值可变的，Attribute始终是默认值
+        但Attribute是可以自定义的，所以可以通过[attr.XXX]添加 Attribute</p>
+    <button [disabled]="hideButton">Button </button>
+    <h3>
+        <p>插值是属性绑定的便捷替代法。当要把数据值渲染为字符串时，
+            虽然可读性方面倾向于插值，但都支持。
+            但是，将元素属性设置为非字符串的数据值时，必须使用属性绑定</p>
+        <img [src]="imageUrl" style="height:50px">
+    </h3>
+
+    <hr><h2>Attribute绑定</h2>
+    <p [attr.color]="colorArray[0]">绑定的Class Name is {{colorArray[0]}}</p>
+    
+    <hr><h2>Class绑定</h2>
+    <h3>单个类绑定</h3>
+    <p [class.hasColor]="hasColor">{{hasColor ? "This text hasColor" : "This text has no Color"}}</p>
+    <p [class.hasColor]="!hasColor">{{!hasColor ? "This text hasColor" : "This text has no Color"}}</p>
+    
+    <h3>多个类绑定</h3>
+    <p [class]="classArray"> Class Names are :{{classArray | json}} </p>
+    <p [class]="classArray[0]"> Class Names is :{{classArray[0]}} </p>
+    <p [class]="classObject"> Class Object is  :{{classObject | json}} </p>
+
+    <hr><h2>样式绑定</h2>
+    <h3>单一的样式绑定</h3>
+    <p></p>
+    <h3>带单位的单一样式绑定</h3>
+    <h3>多个样式绑定</h3>
+
+    <hr><h2>事件绑定</h2>
+    <button (click)="changeComponentProperty()">获取新的组件属性值</button>
+    <br><br>
+    <p>通过 $event 对象取得 触发的事件对象</p>
+    <button (click)="getClickEvent($event)">getClickEventObject</button>
+    
+    <hr><h2>模板输入变量</h2>
+    <div>
+        <ul>
+            <li *ngFor="let color of colorArray">颜色是{{color}}</li>
+        </ul>
+    </div>
+    
+    <hr><h2>模板引用变量</h2>
+    <p>Angular 有一个叫做 模板引用变量 的语法特性。 
+        这些变量给了我们直接访问元素的能力。 
+        通过在标识符前加上井号 (#) ，我们就能定义一个模板引用变量.</p>
+    <div (keyup)="0" class="context">
+      Type something:
+      <input #nameInput> {{nameInput.value}}
+    </div>
+    <p>注意：只有在应用做了些异步事件（如击键），Angular 才更新绑定（并最终影响到屏幕） </p>
+    
+    <hr><h2>用户输入事件</h2>
+    <p>回车事件 keyup.enter</p>
+    <input #box1 (keyup.enter)="onEnter(box1.value)">
+    <p>{{enterValue}}</p>
+    
+    <p>失去焦点事件 blur</p>
+    <input #box2
+    (blur)="update(box2.value)">
+    <p>{{blurValue}}</p>
+    
+    <hr><h2>父子组件传值</h2>
+    <p>父组件中 所有 UserNames 如下：</p>
+    <ul>
+        <li *ngFor="let name of userNames">{{name}}</li>
+    </ul>
+    <p>在子组件显示从服务件传递的用户名 的详细信息</p>
+    <app-demo-child [userName]="userNames[0]" (deleteUserName)="deleteUserName($event)"></app-demo-child>
+    
+   
+
+    <hr><h2>结构型指令</h2>
+    <p>结构型指令->通过添加，移除，替换DOM元素来修改布局</p>
+    <p>ngIf</p>
+    <button *ngIf="!hideButton">ShowButton</button>
+    <p>ngSwitch</p>
+    <p>ngTemplate</p>
+    
+
+
+    <hr><h2>属性型指令</h2>
+    <p>ngStyle</p>
+    <p>ngClass</p>
+    <p>ngModule</p>
+</div>
