@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
   styleUrls: ['./customer.component.scss']
 })
-export class CustomerComponent implements OnInit, AfterViewInit {
+export class CustomerComponent implements OnInit, AfterViewInit, OnChanges {
 
   @Input() name: string;
   constructor() { }
@@ -14,7 +14,12 @@ export class CustomerComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // this.name = 'New Customer';
+    this.name = 'New Customer';
   }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('name has been changed by static componnet!');
+  }
+
 
 }

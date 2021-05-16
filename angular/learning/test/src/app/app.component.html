@@ -1,0 +1,60 @@
+<div>
+    <a [routerLink]="['/']" >child-2</a>
+    <a [routerLink]="['/child3']" >child-3</a>
+</div>
+<div>
+    <router-outlet></router-outlet>
+</div>
+
+<!--<app-life [name]="title" ></app-life>-->
+
+<div>
+    <h2>我是父组件</h2>
+    <div>
+        问候语: <input type="text" name="greeting" [(ngModel)]="greeting">
+    </div>
+    <div>
+        姓名  ： <input type="text" name="username"  [(ngModel)]="user.name" >
+    </div>
+
+    <app-child [greeting]="greeting" [user]="user"  ></app-child>
+</div>
+
+<div>
+    <p></p>
+    <hr>
+    <app-child4 #child4_1></app-child4>
+    <app-child4 #child4_2></app-child4>
+    <!-- 父组件调用子组件另一种方法 -->
+    <button (click)="child4_2.greeting('Jerry')">父组件调用子组件方法</button>
+</div>
+
+<div>
+    <p></p>
+    <hr>
+    <div>这个div定义在父组件中</div>
+    <app-child5>
+        <!-- 只能传递父组件的 属性值，如： title -->
+        <div class="header">header--这段内容是父组件传递给子组件的-- {{title}} </div>
+        <div class="footer">footer--这段内容是父组件传递给子组件的</div>
+    </app-child5>
+</div>
+
+<br>
+<br>
+<br>
+<div [innerHTML]="divContent" >
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

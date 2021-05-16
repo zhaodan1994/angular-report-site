@@ -29,6 +29,8 @@ export class TypeDocModulesComponent implements OnDestroy, AfterViewChecked {
 
   constructor(
     private documentService: DocumentationService,
+    // ActivatedRoute 专门用于由 Angular 路由器加载的每个路由组件。
+    // 它包含关于该路由，路由参数以及与该路由关联的其它数据的信息。
     private route: ActivatedRoute,
     private router: Router,
     private el: ElementRef
@@ -66,6 +68,7 @@ export class TypeDocModulesComponent implements OnDestroy, AfterViewChecked {
     this.documentJson = DocumentationService.jsonData.children;
     this.documentArray = DocumentationService.documentArray;
     this.documentObject = DocumentationService.documentObject;
+    // 获取路由参数
     this.page = this.route.snapshot.paramMap.get('page');
 
     if (this.page.indexOf('-') > -1) {

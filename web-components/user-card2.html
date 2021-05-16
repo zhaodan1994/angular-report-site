@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <user-card></user-card>
+
+    <template id="userCardTemplate">
+        <img src="https://semantic-ui.com/images/avatar2/large/kristy.png" class="image">
+        <div class="container">
+          <p class="name">KIKI</p>
+          <p class="email">XXXX@qq.com</p>
+          <button class="button">Follow-Me</button>
+        </div>
+    </template>
+
+    <script>
+        class UserCard extends HTMLElement {
+            constructor() {
+                super();
+                // 直接 一步一步创建DOM元素很麻烦，可以在template中 使用HTML定义DOM
+
+                const templateElem = document.getElementById('userCardTemplate'); 
+                var content = templateElem.content.cloneNode(true);
+                this.append(content);
+                this.appendChild(content);
+
+
+
+
+
+                
+
+
+            }
+        }
+        customElements.define('user-card', UserCard);
+    </script>
+</body>
+
+</html>

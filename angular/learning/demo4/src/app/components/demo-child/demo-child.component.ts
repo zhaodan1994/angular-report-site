@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-demo-child',
   templateUrl: './demo-child.component.html',
   styleUrls: ['./demo-child.component.scss']
 })
-export class DemoChildComponent implements OnInit {
+export class DemoChildComponent implements OnInit, OnChanges {
 
   @Input()  userName: string;
   // @Input()  set userName(value: string) {
@@ -36,6 +36,10 @@ export class DemoChildComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserInfo(this.userName);
+  }
+
+  ngOnChanges(): void {
+    // this.getUserInfo(this.userName);
   }
 
   getUserInfo(name: string): void {

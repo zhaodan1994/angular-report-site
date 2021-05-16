@@ -9,9 +9,14 @@ export class DemoComponentComponent implements OnInit {
 
   constructor() { }
 
+  showComponent = false;
   name: string;
   ngOnInit(): void {
 
+  }
+
+  createComponent(): void {
+    this.showComponent = true;
   }
 
 

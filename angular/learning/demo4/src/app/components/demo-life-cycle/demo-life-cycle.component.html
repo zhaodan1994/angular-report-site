@@ -1,0 +1,23 @@
+<h1  ><a routerLink="/demo">Back To Home</a></h1>
+<p>demo-life-cycle works!</p>
+<p>{{name}}</p>
+<app-demo-child4  #child4Component *ngIf="showChild4"[userName]='name'>我是外部嵌入的内容{{name}}</app-demo-child4>
+
+<!-- <app-demo-child4 [userName]="name"></app-demo-child4> -->
+
+<button (click)="name='user-new'">ChangeName</button>
+
+<button (click)="name='user1'">NotChangeName</button>
+
+<button (click)="deleteChild4()">Delete Child4 Componnet</button>
+
+<button (click)="addChild4()">Add Child4 Componnet</button>
+
+<br>
+<br>
+
+<!-- <input [(ngModel)]="name"> -->
+{{name}}
+<br>
+<br>
+

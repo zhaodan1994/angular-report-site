@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First WebComponnets</title>
+</head>
+<body>
+    <div>
+
+    </div>
+    <hello-world></hello-world>
+    <!-- 
+        组件 ：
+            什么是组件： 从程序角度， 一个组件就是一个html / css / js组合，对局部视图的
+            封装
+        组件的定义方式：
+            定义HTML模板
+            定义CSS样式
+            定义 JavaScript 行为
+
+     -->
+    <template id= "hw-template">
+        <style>
+            p {
+                padding: 10px;
+                background-color: green;
+                color: azure;
+            }
+        </style>
+        <p>Hello World</p>
+    </template>
+
+    <script>
+        // 自定义元素的类，继承了HTML元素的特性
+        class HelloWorld extends HTMLElement {
+            constructor() {
+                super() // 继承的构造函数中 必须手动调用 super()函数
+                // 得到组件的模板内容
+                const templateContent = document.querySelector('#hw-template').content
+
+                // 创建 组件的根元素： 影子 DOM 节点
+                const shadowRoot = this.attachShadow({mode: 'open'})
+                // 将模板节点 添加到影子 DOM 节点
+                shadowRoot.appendChild(templateContent.cloneNode(true))
+
+                
+            }
+        }
+        // 使用浏览器原生的 define方法，告诉浏览器<hello-world> 元素与这个类关联
+        customElements.define('hello-world', HelloWorld)
+    </script>
+</body>
+</html>

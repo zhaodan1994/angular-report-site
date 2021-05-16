@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First WebComponnets</title>
+</head>
+<body>
+    <hello-world>
+        <p slot="content3">我是通过组件插槽进入的组件内容</p>
+        <h slot="content3">GG</h>
+    </hello-world>
+
+    <hello-world>
+        <!-- <h3 slot="content">卡片2</h3>
+        <h3 slot="content">卡片22</h3> -->
+    </hello-world>
+
+    <template id= "hw-template">
+        <style>
+            p {
+                padding: 10px;
+                background-color: orangered;
+                color: azure;
+            }
+
+            .card {
+                width: 500px;
+                height: 300px;
+                border: 1px solid red;
+            }
+            .card-header {
+                padding: 10px;
+                background-color: palegoldenrod;
+            }
+
+        </style>
+        <div>
+          
+            <div class="card">
+                <div class="card-header">头部</div>
+                <div class="card-content">
+                    <!-- 组件插槽 -->
+                    <slot name="content3"> 默认内容 </slot>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        class HelloWorld extends HTMLElement {
+            constructor() {
+                super() // 继承的构造函数中 必须手动调用 super()函数
+                // 得到组件的模板内容
+                const templateContent = document.querySelector('#hw-template').content
+
+                // 创建 组件的根元素： 影子 DOM 节点
+                const shadowRoot = this.attachShadow({mode: 'open'})
+                // 将模板节点 添加到影子 DOM 节点
+                shadowRoot.appendChild(templateContent.cloneNode(true))
+
+                
+            }
+
+            connectedCallback() {  // 创建组件时 被调用  ，可以 发送数据请求
+                console.log("connectedCallback")
+            }
+
+
+            disconnectedCallback() {
+
+            }
+
+            adoptedCallback() {
+
+            }
+
+            attributeChangedCallback () {
+                console.log("attributeChangedCallback 属性改变了" )
+            }
+        }
+        customElements.define('hello-world', HelloWorld)
+    </script>
+</body>
+</html>

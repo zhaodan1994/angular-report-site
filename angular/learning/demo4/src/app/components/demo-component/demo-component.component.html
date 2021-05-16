@@ -1,4 +1,7 @@
-
+<h1  ><a routerLink="/demo">Back To Home</a></h1>
 <app-demo-component1></app-demo-component1>
 <app-demo-component2></app-demo-component2>
 <app-demo-component3></app-demo-component3>
+
+<button (click)="createComponent()">Create a Component1</button>
+<app-demo-component1 *ngIf="showComponent"></app-demo-component1>

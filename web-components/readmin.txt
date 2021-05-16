@@ -1,0 +1,39 @@
+
+
+web componnets also is called Custom Elements
+
+
+1、WHY WEB COMPONENTS?
+    A standard API for several browsers which allow developers to implement reusable components with only HTML, CSS and JavaScript.
+    Instead, Custom Elements offer you encapsulation of all the structure (HTML), styling (CSS), and behavior (JavaScript) in one custom HTML element.
+    Afterward, you can continue using it across your application, make it an open source web component to install it somewhere else, or use a framework like react / angular / vue
+
+2、GETTING STARTED WITH WEB COMPONENTS
+
+    helloworld.html
+
+3、HOW TO PASS ATTRIBUTES TO WEB COMPONENTS?
+
+    attributes.html
+
+4、REFLECTING PROPERTIES TO ATTRIBUTES
+
+    properties-attributes.html
+
+
+5、HOW TO PASS A FUNCTION TO A WEB COMPONENT?
+
+
+
+
+6、WEB COMPONENTS LIFECYCLE CALLBACKS
+
+
+
+7、WEB COMPONENTS WITHIN WEB COMPONENT
+
+
+
+8、BEHAVIOR OF WEB COMPONENTS WITH JAVASCRIPT
+
+

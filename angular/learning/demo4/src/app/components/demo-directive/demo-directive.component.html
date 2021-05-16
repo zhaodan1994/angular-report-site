@@ -1,0 +1,20 @@
+<h1  ><a routerLink="/demo">Back To Home</a></h1>
+<h2>自定义的属性指令</h2>
+<div appAttribute>This div use the attribute directive set the css style</div>
+<br>
+<div [appAttributeInput]= 'color' defaultColor='red'>This div use the attribute directive with color value</div>
+
+<br>
+<div appAttributeInput defaultColor='red'>This div use the attribute directive with default color </div>
+
+<br>
+<button (click)="color='pink'">Change the Color Input Value To Pink</button>
+
+<p>Current color is {{color}}</p>
+
+<h2>自定义的结构指令</h2>
+<p>Current child is {{currentChild}}</p>
+<button (click)="currentChild='child2'">Change the currentChild</button>
+<br>
+<app-demo-child1 *appStructural="currentChild=='child1'"></app-demo-child1>
+<app-demo-child2 *appStructural="currentChild=='child2'"></app-demo-child2>

@@ -49,7 +49,7 @@ export class DemoNgTemplateComponent implements OnInit, OnDestroy {
     this.greetComponentRef.instance.changeEvent.subscribe((value: string) => {
       this.name = value;
     });
-  
+
   }
 
   createComponentInOtherModule(): void {

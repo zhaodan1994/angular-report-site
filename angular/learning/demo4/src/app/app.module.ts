@@ -25,6 +25,17 @@ import { DemoTemplatePropertyComponent } from './components/demo-template-proper
 import { DemoParentComponent } from './components/demo-parent/demo-parent.component';
 import { DemoChildComponent } from './components/demo-child/demo-child.component';
 import { SizeComponent } from './components/size/size.component';
+import { DemoChild1Component } from './components/demo-child1/demo-child1.component';
+import { DemoChild2Component } from './components/demo-child2/demo-child2.component';
+import { DemoChild3Component } from './components/demo-child3/demo-child3.component';
+import { DemoDirectiveComponent } from './components/demo-directive/demo-directive.component';
+import { AttributeDirective } from './components/attribute/attribute.directive';
+import { StructuralDirective } from './components/structural/structural.directive';
+import { AttributeInputDirective } from './components/attribute-input/attribute-input.directive';
+import { DemoLifeCycleComponent } from './components/demo-life-cycle/demo-life-cycle.component';
+import { DemoChild4Component } from './components/demo-child4/demo-child4.component';
+import { DemoChild5Component } from './components/demo-child5/demo-child5.component';
+import { DemoChild6Component } from './components/demo-child6/demo-child6.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +57,18 @@ import { SizeComponent } from './components/size/size.component';
     DemoTemplatePropertyComponent,
     DemoParentComponent,
     DemoChildComponent,
-    SizeComponent
+    SizeComponent,
+    DemoChild1Component,
+    DemoChild2Component,
+    DemoChild3Component,
+    DemoDirectiveComponent,
+    AttributeDirective,
+    StructuralDirective,
+    AttributeInputDirective,
+    DemoLifeCycleComponent,
+    DemoChild4Component,
+    DemoChild5Component,
+    DemoChild6Component
   ],
   imports: [
     BrowserModule,

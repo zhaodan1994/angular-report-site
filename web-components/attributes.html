@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First WebComponnets</title>
+</head>
+<body>
+    <hello-world message="XXX2"></hello-world>
+    <input type="button" onclick="changeText()" value = "ChangeMessage"/>
+    <template id= "hw-template">
+        <style>
+            p {
+                padding: 10px;
+                background-color: orangered;
+                color: azure;
+            }
+        </style>
+        <p> Hello World</p>
+    </template>
+
+    <script>
+
+        function changeText() {
+              const customHtmlElement =  document.querySelector("hello-world");
+              customHtmlElement.setAttribute("message", "New World")
+
+
+        }
+        class HelloWorld extends HTMLElement {
+            constructor() {
+                super() // 继承的构造函数中 必须手动调用 super()函数
+                // 得到组件的模板内容
+                const templateContent = document.querySelector('#hw-template').content
+
+                // 创建 组件的根元素： 影子 DOM 节点
+                const shadowRoot = this.attachShadow({mode: 'open'})
+                // 将模板节点 添加到影子 DOM 节点
+                shadowRoot.appendChild(templateContent.cloneNode(true))
+                
+
+                // 得到属性
+                const message = this.getAttribute('message')
+                shadowRoot.querySelector('p').innerText = message
+                
+            }
+
+            static get observedAttributes() {
+                return ['message']
+            }
+
+            attributeChangedCallback (name, oldVal, newVal) {
+
+                // 有更改属性值得操作，并没有判断值是否一样 oldVal = newVal ，也可以执行此回调
+                this[name] = newVal;
+                console.log("attributeChangedCallback 属性改变了" );
+                this.render(newVal);
+
+            }
+
+            render(value) {
+                this.shadowRoot.querySelector('p').innerText = value
+            }
+        }
+        customElements.define('hello-world', HelloWorld)
+    </script>
+</body>
+</html>

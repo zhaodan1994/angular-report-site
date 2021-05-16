@@ -15,6 +15,7 @@ export class DemoParentComponent implements OnInit {
   title = '小蜜蜂';
   imageUrl = 'http://xa-at-sys/Images/Applications.ico';
   hideButton = true;
+  showText = true;
   colorArray = [
     'red',
     'green',
@@ -48,6 +49,7 @@ export class DemoParentComponent implements OnInit {
   };
   styleString = 'width:400px; height: 100px; color: blue; margin-bottom: 20px';
   fontSize = 15;
+  currentChild = 'child1';
 
   ngOnInit(): void {
   }
@@ -75,6 +77,14 @@ export class DemoParentComponent implements OnInit {
       if (index > -1) {
         this.userNames.splice(index, 1);
       }
+  }
+
+  setTextColor(textColor: string): object {
+    return  {color: textColor};
+  }
+
+  updateUserName(name: string): void {
+    this.personInfo.name = name;
   }
 
 

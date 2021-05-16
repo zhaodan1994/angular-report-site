@@ -1,0 +1,96 @@
+
+
+
+
+
+
+
+
+
+
+state
+
+局部刷新
+
+
+properties --> key , value 
+
+update
+
+applyMedilemare
+
+O0P  -> 数据 ，表现 独立
+
+
+
+组件树 -> 组合
+
+【Render
+
+
+】
+
+
+
+内存， render 
+
+缺点 ： 拖拽 ， menu -- 动态行为 ： 第三方插件
+
+父拿子组件 =》  拿的是DOM String  ，不是DOM Ref，无法操作子
+
+
+context
+
+
+render   异步获取 
+
+
+
+
+OOP - angular
+
+
+react -> simple , fast  =>    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

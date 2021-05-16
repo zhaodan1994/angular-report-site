@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First WebComponnets</title>
+</head>
+
+<body>
+    <my-dropdown label="Dropdown" option="option2"
+        options='{ "option1": { "label": "Option 1" }, "option2": { "label": "Option 2" } }'></my-dropdown>
+
+    <template id="hw-template">
+        <style>
+            :host {
+                font-family: sans-serif;
+            }
+
+            .dropdown {
+                padding: 3px 8px 8px;
+            }
+
+            .label {
+                display: block;
+                margin-bottom: 5px;
+                color: #000000;
+                font-size: 16px;
+                font-weight: normal;
+                line-height: 16px;
+            }
+
+            .dropdown-list-container {
+                position: relative;
+            }
+
+            .dropdown-list {
+                position: absolute;
+                width: 100%;
+                display: none;
+                max-height: 192px;
+                overflow-y: auto;
+                margin: 4px 0 0;
+                padding: 0;
+                background-color: #ffffff;
+                border: 1px solid #a1a1a1;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05), 0 2px 8px 0 rgba(161, 161, 161, 0.4);
+                list-style: none;
+            }
+
+            .dropdown-list li {
+                display: flex;
+                align-items: center;
+                margin: 4px 0;
+                padding: 0 7px;
+                font-size: 16px;
+                height: 40px;
+                cursor: pointer;
+            }
+
+            .dropdown.open .dropdown-list {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .dropdown-list li.selected {
+                font-weight: 600;
+            }
+        </style>
+
+        <div class="dropdown">
+            <span class="label">Label</span>
+
+            <my-button as-atom>Content</my-button>
+
+            <div class="dropdown-list-container">
+                <ul class="dropdown-list"></ul>
+            </div>
+        </div>
+
+    </template>
+
+
+    <template id="button-template">
+        <style>
+            .container {
+                padding: 8px;
+            }
+
+            button {
+                display: block;
+                overflow: hidden;
+                position: relative;
+                padding: 0 16px;
+                font-size: 16px;
+                font-weight: bold;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                cursor: pointer;
+                outline: none;
+
+                width: 100%;
+                height: 40px;
+
+                box-sizing: border-box;
+                border: 1px solid #a1a1a1;
+                background: #ffffff;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05), 0 2px 8px 0 rgba(161, 161, 161, 0.4);
+                color: #363636;
+                cursor: pointer;
+            }
+        </style>
+
+        <div class="container">
+            <button>Label</button>
+        </div>
+
+    </template>
+
+    <script>
+
+
+    document
+    .querySelector('my-dropdown')
+    .addEventListener('onChange', event => console.log(event.detail));
+
+
+        // 自定义元素的类，继承了HTML元素的特性
+        class Dropdown extends HTMLElement {
+            constructor() {
+                super();
+                const templateContent = document.querySelector('#hw-template').content;
+                this._sR = this.attachShadow({ mode: 'open' });
+                this._sR.appendChild(templateContent.cloneNode(true));
+                this.$dropdown = this._sR.querySelector('.dropdown');
+
+
+                this.$label = this._sR.querySelector('.label');
+                this.$button = this._sR.querySelector('my-button');
+                this.$dropdownList = this._sR.querySelector('.dropdown-list');
+                this.open = false;
+
+                this.$button.addEventListener('onClick', this.toggleOpen.bind(this));
+
+
+
+
+            }
+
+            toggleOpen(event) {
+                this.open = !this.open;
+                this.open
+                    ? this.$dropdown.classList.add('open')
+                    : this.$dropdown.classList.remove('open');
+            }
+
+            static get observedAttributes() {
+                return ['label', 'option', 'options'];
+            }
+
+            get label() {
+                return this.getAttribute('label');
+            }
+
+            set label(value) {
+                this.setAttribute('label', value);
+            }
+
+            get option() {
+                return this.getAttribute('option');
+            }
+
+            set option(value) {
+                this.setAttribute('option', value);
+            }
+
+            get options() {
+                return JSON.parse(this.getAttribute('options'));
+            }
+
+            set options(value) {
+                this.setAttribute('options', JSON.stringify(value));
+            }
+
+            static get observedAttributes() {
+                return ['label', 'option', 'options'];
+            }
+
+
+
+            attributeChangedCallback(name, oldVal, newVal) {
+                this.render();
+            }
+
+            render() {
+                this.$label.innerHTML = this.label;
+
+                this.$button.setAttribute('label', 'Select Option');
+
+                if (this.options) {
+                    this.$button.setAttribute(
+                        'label',
+                        this.options[this.option].label
+                    );
+                }
+
+                this.$dropdownList.innerHTML = '';
+
+
+
+                Object.keys(this.options || {}).forEach(key => {
+                    let option = this.options[key];
+                    let $option = document.createElement('li');
+                    $option.innerHTML = option.label;
+
+                    if (this.option && this.option === key) {
+                        $option.classList.add('selected');
+                    }
+
+                    $option.addEventListener('click', () => {
+                        if (this.option !== key) {
+                            this.dispatchEvent(
+                                new CustomEvent('onChange', {detail : key })
+                            );
+                        }
+                        this.option = key;
+
+                        this.toggleOpen();
+
+                       
+
+                        this.render();
+                    });
+
+                    this.$dropdownList.appendChild($option);
+                });
+            }
+
+
+
+
+
+
+
+        }
+        // 使用浏览器原生的 define方法，告诉浏览器<hello-world> 元素与这个类关联
+        customElements.define('my-dropdown', Dropdown);
+
+
+
+
+
+
+        // my -button
+
+        class Button extends HTMLElement {
+            constructor() {
+                super();
+                const templateContent = document.querySelector('#button-template').content;
+                this._shadowRoot = this.attachShadow({ mode: 'open' });
+                this._shadowRoot.appendChild(templateContent.cloneNode(true));
+
+                this.$button = this._shadowRoot.querySelector('button');
+                this.$container = this._shadowRoot.querySelector('.container');
+                this._shadowRoot.querySelector('button').addEventListener('click', () => {
+                    this.dispatchEvent(
+                        new CustomEvent('onClick', {
+                            detail: 'Click Event'
+                        })
+                    );
+                });
+            }
+
+            get label() {
+                return this.getAttribute('label');
+            }
+
+            set label(value) {
+                this.setAttribute('label', value);
+            }
+
+            static get observedAttributes() {
+                return ['label'];
+            }
+
+            connectedCallback() {
+                if (this.hasAttribute('as-atom')) {
+                    this.$container.style.padding = '0px';
+                }
+            }
+
+            attributeChangedCallback(name, oldVal, newVal) {
+                this.render();
+            }
+
+            render() {
+                this.$button.innerHTML = this.label;
+            }
+        }
+
+        window.customElements.define('my-button', Button);
+
+
+
+    </script>
+</body>
+
+</html>

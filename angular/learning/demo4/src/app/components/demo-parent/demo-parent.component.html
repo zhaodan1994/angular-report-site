@@ -1,3 +1,4 @@
+<h1  ><a routerLink="/demo">Back To Home</a></h1>
 <div class="template">
     <h1>模板语法</h1>
 
@@ -86,27 +87,156 @@
     <ul>
         <li *ngFor="let name of userNames">{{name}}</li>
     </ul>
-    <p>在子组件显示从服务件传递的用户名 的详细信息</p>
+    <p>在子组件显示从 父组件传递的用户名 的详细信息</p>
     <app-demo-child [userName]="userNames[0]" (deleteUserName)="deleteUserName($event)"></app-demo-child>
     
    
     <hr><h2>数据的双向绑定</h2>
+    <div>
+        <p>双向绑定会做两件事：</p>
+        <ul>
+            <li>设置特定的元素属性</li>
+            <li>监听元素的变更事件</li>
+        </ul>
+        <p>Angular 为此提供了一种特殊的双向数据绑定语法 [()]。
+            [()] 语法将属性绑定的括号 [] 与事件绑定的括号 () 组合在一起。
+            该元素具有名为 x 的可设置属性和名为 xChange 的相应事件
+        </p>
+    </div>
     <p [style.fontSize.px]="fontSize">The Text FontSize is {{fontSize}}px</p>
     <app-size [(size)]="fontSize"></app-size>
+    <p>双向绑定语法实际上是属性绑定和事件绑定的语法糖</p>
     <app-size [size]="fontSize" (sizeChange)="fontSize = $event"></app-size>
+
+    
+    <hr><h2>属性型指令</h2>
+    <h3>ngStyle</h3>
+
+    <div [ngStyle]="{'color':'blue'}">
+        This text use the [ngStyle] binding with a single style
+     </div>
+
+    <div class="border" [ngStyle]="styleObject">
+        This text use the [ngStyle] binding with multiple styles
+    </div>
+
+     <h3>ngClass</h3>     
+    <div [ngClass]="hasColor ? 'hasColor' : ''">
+        This text use the [ngClass] binding with a single class
+    </div>
+
+    <div class="class1 class2 class3">class1 class2 class3</div>
+    <div [ngClass]="classObject">
+        This text use the [ngClass] binding with multiple classes
+    </div>
+    
+    <h3>ngModule</h3>
+
+    <input [(ngModel)]="personInfo.name">
+    {{personInfo.name}} [(ngModel)] 
+    <br>
+    <input
+  [ngModel]="personInfo.name"
+     (ngModelChange)="personInfo.name=$event">
+     {{personInfo.name}} (ngModelChange)="...name=$event"  
+    <br>
+    <input
+  [ngModel]="personInfo.name"
+    (ngModelChange)="updateUserName($event)">
+    {{personInfo.name}}  (ngModelChange)="updateUserName($event)"  
 
 
     <hr><h2>结构型指令</h2>
     <p>结构型指令->通过添加，移除，替换DOM元素来修改布局</p>
-    <p>ngIf</p>
-    <button *ngIf="!hideButton">ShowButton</button>
-    <p>ngSwitch</p>
-    <p>ngTemplate</p>
+    <h3>ngIf</h3>
+    <p *ngIf="showText">This text is shown</p>
+    <h3>ngSwitch</h3>
+    <p>NgSwitch 类似于 JavaScript switch 语句。它根据切换条件显示几个可能的元素中的一个。Angular 只会将选定的元素放入 DOM。</p>
+    <p>Current child is {{currentChild}}</p>
+    <button (click)="currentChild='child2'">Change CurrentChld to child2</button>
+    <div [ngSwitch]="currentChild">
+        <app-demo-child1 *ngSwitchCase="'child1'"></app-demo-child1>
+        <app-demo-child2 *ngSwitchCase="'child2'"></app-demo-child2>
+        <app-demo-child3 *ngSwitchCase="'child3'"></app-demo-child3>
+    </div>
+    <h3>ngTemplate</h3>
+    <p>
+        ng-template 是一个 Angular 元素，用来渲染 HTML。 它永远不会直接显示出来。 
+        事实上，在渲染视图之前，Angular 会把  ng-template 及其内容替换为一个注释。
+        如果没有使用结构型指令，而仅仅把一些别的元素包装进  ng-template 中，那些元素就是不可见的
+    </p>
+    <p>可见文本</p>
+    <ng-template>不可见文本</ng-template>
+
+    <div class="hasColor" *ngIf="personInfo">{{personInfo.name}}  - use *ngIf</div>
+
+    <ng-template [ngIf]="personInfo">
+        <div class="hasColor border">{{personInfo.name}} - use ng-template</div>
+     </ng-template>
+
+     <p [style]="setTextColor(color)" *ngFor="let color of colorArray">带有颜色的文本 - use *ngFor</p>
+     <hr>
+     <ng-template ngFor let-color [ngForOf]="colorArray" let-i="index">
+        <p [style]="setTextColor(color)">带有颜色的文本 - use ng-template</p>
+    </ng-template>
+
+    <p>当 用户个数大于2时, 才显示用户列表</p>
+    <p>每个宿主元素上只能有一个结构型指令, 否则会报错</p>
+    <!-- <ul *ngIf="userNames.length>2" *ngFor="let user of userNames">
+        <li>{{user}}</li>
+    </ul> -->
+
+    <ng-template [ngIf]="userNames.length>2">
+        <ul *ngFor="let user of userNames">
+            <li>{{user}}</li>
+        </ul>
+    </ng-template>
+
+    <h3>ngContainer</h3>
+    <p>
+        ng-container是一个分组元素，但它不会污染样式或元素布局，
+        因为 Angular 压根不会把它放进 DOM 中。
+    </p>
+    
+    <P>
+        Hello , My name is kiki
+        <span *ngIf="showText">
+                and my favourite color is red
+        </span>
+        and my favourite fruit is apple
+    </P>
+    <P>
+        Hello , My name is kiki
+        <ng-container *ngIf="showText">
+            and my favourite color is red
+        </ng-container>
+        and my favourite fruit is apple
+    </P>
+
+<p>开发过程中 ne-template与 ng-container结合使用</p>
+    <div class="border">
+        <p>第一次使用 textTemplate</p>
+        <ng-container *ngTemplateOutlet="textTemplate"></ng-container>              
+    </div>
+    <br>
+    <div class="border">
+        <p>第二次使用 textTemplate</p>
+        <ng-container *ngTemplateOutlet="textTemplate"></ng-container>              
+    </div>
+
+    <ng-template #textTemplate>
+        <p>This is a common template!</p>
+    </ng-template>
+
+    <p>ng-template 用于 if-else条件选择</p>
+    <button (click)="currentChild='child2'">Change CurrentChld to child2</button>
+
+    <ng-container *ngIf="currentChild=='child1'; else elseTemplate">
+        <app-demo-child1></app-demo-child1>
+    </ng-container>
+    <ng-template #elseTemplate>
+        <app-demo-child2></app-demo-child2>
+    </ng-template>
     
 
-
-    <hr><h2>属性型指令</h2>
-    <p>ngStyle</p>
-    <p>ngClass</p>
-    <p>ngModule</p>
 </div>

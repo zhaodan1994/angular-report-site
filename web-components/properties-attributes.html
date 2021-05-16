@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First WebComponnets</title>
+</head>
+<body>
+    <hello-world label = "Click Me" ></hello-world>
+    <input type="button" onclick="changeText()" value = "ChangeMessage"/>
+    <template id= "hw-template">
+        <style>
+            p {
+                padding: 10px;
+                background-color: orangered;
+                color: azure;
+            }
+        </style>
+        <p></p>
+        <h1></h1>
+    </template>
+
+    <script>
+
+        function changeText() {
+              const customHtmlElement =  document.querySelector("hello-world");
+              customHtmlElement.message2 = 'New Text From Property';
+              customHtmlElement.setAttribute('label', 'New Text From Attribute');
+
+
+        }
+        class HelloWorld extends HTMLElement {
+            constructor() {
+                super();// 继承的构造函数中 必须手动调用 super()函数
+                // 得到组件的模板内容
+                const templateContent = document.querySelector('#hw-template').content;
+
+                // 创建 组件的根元素： 影子 DOM 节点
+                const shadowRoot = this.attachShadow({mode: 'open'});
+                // 将模板节点 添加到影子 DOM 节点
+                shadowRoot.appendChild(templateContent.cloneNode(true));
+                
+
+                // 得到属性
+                const label = this.getAttribute('label');
+                shadowRoot.querySelector('h1').innerText = label;
+                
+            }
+
+            static get observedAttributes() {
+                return ['message', 'label'];
+            }
+
+            attributeChangedCallback (name, oldVal, newVal) {
+                console.log(3);
+                // 有更改属性值得操作，并没有判断值是否一样 oldVal = newVal ，也可以执行此回调
+                console.log("attributeChangedCallback 属性改变了" );
+                this.render(newVal);
+
+            }
+
+            get message2() {
+                console.log(5);
+                return this.getAttribute('message');
+            }
+
+            get label() {
+                return this.getAttribute('label');
+            }
+
+            set message2(value) {
+                console.log(2);
+                // pass information from property to attribute
+                this.setAttribute('message', value);
+            }
+
+            render(value) {
+                console.log(4);
+                this.shadowRoot.querySelector('p').innerText = this.message2;
+
+                // pass information from attribute to property
+                this.shadowRoot.querySelector('h1').innerText = this.label;
+            }
+        }
+        customElements.define('hello-world', HelloWorld);
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First WebComponnets</title>
+</head>
+<body>
+    <hello-world></hello-world>
+    <template id= "hw-template">
+        <style>
+            p {
+                padding: 10px;
+                background-color: orangered;
+                color: azure;
+            }
+        </style>
+        <p>Hello World</p>
+        <button>Button</button>
+    </template>
+
+    <script>
+        
+        const customHtmlElement =  document.querySelector('hello-world');
+        // defining event from outside
+        // customHtmlElement.addEventListener('click',() => {
+        //     customHtmlElement.setAttribute('message', 'New Text');
+        // })
+
+        // pass function to webcomponent by using property
+        // customHtmlElement.onClick =  value => {
+        //     console.log(value);
+        // }
+
+
+
+        // add onclick event
+        customHtmlElement.addEventListener('onClick',(value) => {
+            console.log(value.detail);
+        })
+
+
+
+        // 自定义元素的类，继承了HTML元素的特性
+        class HelloWorld extends HTMLElement {
+            constructor() {
+                super() // 继承的构造函数中 必须手动调用 super()函数
+                // 得到组件的模板内容
+                const templateContent = document.querySelector('#hw-template').content
+
+                // 创建 组件的根元素： 影子 DOM 节点
+                const shadowRoot = this.attachShadow({mode: 'open'})
+                // 将模板节点 添加到影子 DOM 节点
+                shadowRoot.appendChild(templateContent.cloneNode(true));
+
+
+                // defining event inside of the custom element
+                // this.shadowRoot.querySelector('button').addEventListener('click',() => {
+                //     customHtmlElement.setAttribute('message', 'New Text2');
+                // })
+
+
+                this.shadowRoot.querySelector('button').addEventListener('click', () => {
+                    // this.onClick('Hello from within the Custom Element');
+                    this.dispatchEvent(
+                        new CustomEvent('onClick', {
+                            detail: {
+                                text : 'Hello from within the Custom Element',
+                                id: 12345
+                            }
+                        })
+                    );
+                });
+
+
+
+
+
+
+                
+            }
+
+
+            static get observedAttributes() {
+                return ['message']
+            }
+
+            attributeChangedCallback (name, oldVal, newVal) {
+
+                // 有更改属性值得操作，并没有判断值是否一样 oldVal = newVal ，也可以执行此回调
+                this[name] = newVal;
+                console.log("attributeChangedCallback 属性改变了" );
+                this.render(newVal);
+
+            }
+
+            render(value) {
+                this.shadowRoot.querySelector('p').innerText = value
+            }
+
+
+        }
+        // 使用浏览器原生的 define方法，告诉浏览器<hello-world> 元素与这个类关联
+        customElements.define('hello-world', HelloWorld);
+
+
+
+    </script>
+</body>
+</html>
